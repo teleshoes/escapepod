@@ -53,7 +53,6 @@ sub getConfig($){
     infoDir => "$infoDir",
     urlOverridesFile => "$infoDir/url-overrides",
     cacheDir => "$cacheDir",
-    htmlCacheDir => "$cacheDir/html-cache",
 
     mp3Dir => "$ENV{HOME}/Desktop/Music/books/$$base{podcastName}",
     csvDelim => ';',
@@ -558,7 +557,12 @@ sub htmlCacheFile($){
   $name =~ s/^\///;
   $name =~ s/\/$//;
   $name =~ s/\//%%/g;
-  return "$$config{htmlCacheDir}/$name";
+
+  my $htmlCacheDir = "$$config{cacheDir}/html-cache";
+  run "mkdir", "-p", $htmlCacheDir if not -d $htmlCacheDir;
+  die "html cache dir missing: '$htmlCacheDir'\n" if not -d $htmlCacheDir;
+
+  return "$htmlCacheDir/$name";
 }
 
 sub ensureHtmlCache($){
@@ -598,7 +602,6 @@ sub checkHtmlCache($){
 sub attemptPutHtmlCache($){
   my $url = shift;
 
-  run "mkdir", "-p", $$config{htmlCacheDir} if not -d $$config{htmlCacheDir};
   my $cacheFile = htmlCacheFile $url;
   return 1 if checkHtmlCache $url;
 
