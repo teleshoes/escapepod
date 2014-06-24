@@ -54,7 +54,7 @@ sub getConfig($){
     urlOverridesFile => "$infoDir/url-overrides",
     cacheDir => "$cacheDir",
 
-    mp3Dir => "$ENV{HOME}/Desktop/Music/books/$$base{podcastName}",
+    mp3Dir => "$cacheDir/downloads",
     csvDelim => ';',
   };
 }
@@ -328,9 +328,11 @@ sub main(@){
     close OUT;
     run "cat $$config{cacheDir}/wiki-out | xsel -b";
   }elsif($cmd =~ /^(--mp3url|--mp3filename|--download|--download-only|--tag)/){
-    die "$$config{mp3Dir} does not exist\n" if not -d $$config{mp3Dir};
-    chdir $$config{mp3Dir};
-    $ENV{PWD} = $$config{mp3Dir};
+    my $mp3Dir = $$config{mp3Dir};
+    run "mkdir", "-p", $mp3Dir if not -d $mp3Dir;
+    die "$mp3Dir does not exist\n" if not -d $mp3Dir;
+    chdir $mp3Dir;
+    $ENV{PWD} = $mp3Dir;
     for my $epNum(sort keys %$epInfo){
       my $info = &{$$epInfo{$epNum}}();
       my $articleUrl = $$info{articleUrl};
