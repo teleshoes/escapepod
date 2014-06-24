@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use utf8;
 use List::Util qw(max);
+use File::Basename qw(dirname);
 
 sub getConfig($);
 
@@ -34,7 +35,10 @@ sub getConfig($){
   $podcastWordsRe =~ s/pod/ pod /i;
   $podcastWordsRe =~ s/\s+/\\s*/g;
 
-  my $baseDir = "$ENV{HOME}/$$base{podcastWord}";
+  my $localDir = dirname(__FILE__);
+
+  my $infoDir = "$localDir/$$base{podcastWord}";
+  my $cacheDir = "$ENV{HOME}/.cache/$$base{podcastWord}";
 
   return {%$base,
     baseUrl => "http://$$base{podcastWord}.org",
@@ -46,9 +50,10 @@ sub getConfig($){
       . "(?:episode-?\\s*)?"
       . ")",
 
-    baseDir => "$baseDir",
-    htmlCacheDir => "$baseDir/html-cache",
-    urlOverridesFile => "$baseDir/url-overrides",
+    infoDir => "$infoDir",
+    urlOverridesFile => "$infoDir/url-overrides",
+    cacheDir => "$cacheDir",
+    htmlCacheDir => "$cacheDir/html-cache",
 
     mp3Dir => "$ENV{HOME}/Desktop/Music/books/$$base{podcastName}",
     csvDelim => ';',
@@ -109,7 +114,8 @@ my $cmds = join "|", qw(
 my $usage = "Usage:
   $0 [PODCAST] [$cmds [EPNUM EPNUM ..]]
     Crawl BASE_URL and print information about each epiosde.
-    HTML is fetched using curl/wget and cached in BASE_DIR/html-cache
+    HTML is fetched using curl/wget and cached in CACHE_DIR/html-cache,
+    and is supplemented with the info in INFO_DIR
 
     --csv {default if no args specified}
       Print episode info in CSV with delim=CSV_DELIM
@@ -117,8 +123,8 @@ my $usage = "Usage:
       Print the article url for each EPNUM
     --wiki
       Use article HTML pages and forums to generate output in wikipedia-list format.
-      Prints to stdout and to the file BASE_DIR/wiki-out, and copies to the clipboard.
-        {runs 'cat BASE_DIR/wiki-out | xsel -b'}
+      Prints to stdout and to the file CACHE_DIR/wiki-out, and copies to the clipboard.
+        {runs 'cat CACHE_DIR/wiki-out | xsel -b'}
     --mp3url
       Print the download URL, parsed from the article HTML.
     --mp3filename
@@ -154,12 +160,14 @@ my $usage = "Usage:
       PODCAST_NAME: $$podcastConfigs{escapepod}{podcastName}
       BASE_URL:     $$podcastConfigs{escapepod}{baseUrl}
       MP3_DIR:      $$podcastConfigs{escapepod}{mp3Dir}
-      BASE_DIR:     $$podcastConfigs{escapepod}{baseDir}
+      INFO_DIR:     $$podcastConfigs{escapepod}{infoDir}
+      CACHE_DIR:    $$podcastConfigs{escapepod}{cacheDir}
     --podcastle:
       PODCAST_NAME: $$podcastConfigs{podcastle}{podcastName}
       BASE_URL:     $$podcastConfigs{podcastle}{baseUrl}
       MP3_DIR:      $$podcastConfigs{podcastle}{mp3Dir}
-      BASE_DIR:     $$podcastConfigs{podcastle}{baseDir}
+      INFO_DIR:     $$podcastConfigs{podcastle}{infoDir}
+      CACHE_DIR:    $$podcastConfigs{podcastle}{cacheDir}
 
   EPNUM: podcast episode number. if none are specified, all are used.
          a range can be specified as [LOW-HIGH] => LOW <= EPNUM <= HIGH
@@ -175,6 +183,12 @@ sub main(@){
   $podcast = $defaultPodcast if not defined $podcast;
   $podcast =~ s/^--//;
   $config = $$podcastConfigs{$podcast};
+
+  my $infoDir = $$config{infoDir};
+  my $cacheDir = $$config{cacheDir};
+  die "FATAL: missing INFO_DIR '$infoDir\n'" if not -d $infoDir;
+  run "mkdir", "-p", $cacheDir if not -d $cacheDir;
+  die "FATAL: missing CACHE_DIR '$cacheDir\n'" if not -d $cacheDir;
 
   my $cmd = shift;
   $cmd = '--csv' if not defined $cmd;
@@ -252,10 +266,10 @@ sub main(@){
     }
 
     my $isAllEps = @nums == keys %$articleUrls;
-    my $prefixFile = "$$config{baseDir}/wiki-prefix";
-    my $suffixFile = "$$config{baseDir}/wiki-suffix";
+    my $prefixFile = "$$config{infoDir}/wiki-prefix";
+    my $suffixFile = "$$config{infoDir}/wiki-suffix";
 
-    open OUT, "> $$config{baseDir}/wiki-out";
+    open OUT, "> $$config{cacheDir}/wiki-out";
 
     if($isAllEps and -e $prefixFile){
       my $prefix = `cat $prefixFile`;
@@ -313,7 +327,7 @@ sub main(@){
       print OUT $suffix;
     }
     close OUT;
-    run "cat $$config{baseDir}/wiki-out | xsel -b";
+    run "cat $$config{cacheDir}/wiki-out | xsel -b";
   }elsif($cmd =~ /^(--mp3url|--mp3filename|--download|--download-only|--tag)/){
     die "$$config{mp3Dir} does not exist\n" if not -d $$config{mp3Dir};
     chdir $$config{mp3Dir};
@@ -759,7 +773,7 @@ sub getUrlOverrides($){
 
 sub readAttCache($){
   my $name = shift;
-  my $cacheFile = "$$config{baseDir}/$name";
+  my $cacheFile = "$$config{cacheDir}/$name";
   my @lines = `cat $cacheFile 2>/dev/null`;
   my $cache = {};
   for my $line(@lines){
@@ -772,7 +786,7 @@ sub readAttCache($){
 
 sub writeAttCache($$){
   my ($name, $cache) = @_;
-  my $cacheFile = "$$config{baseDir}/$name";
+  my $cacheFile = "$$config{cacheDir}/$name";
   my $s = '';
   open FH, "> $cacheFile" or die "Couldnt write to $cacheFile\n";
   for my $epNum(sort {$a cmp $b} keys %$cache){
@@ -783,7 +797,7 @@ sub writeAttCache($$){
 }
 
 sub extraInfo(){
-  my $file = "$$config{baseDir}/extra-info";
+  my $file = "$$config{infoDir}/extra-info";
   my $extraInfo = {};
   for my $line(`cat $file`){
     $line =~ s/#.*//;
@@ -798,7 +812,7 @@ sub extraInfo(){
 }
 
 sub personLinks(){
-  my $file = "$$config{baseDir}/person-links";
+  my $file = "$$config{infoDir}/person-links";
   my $personLinks = {};
   for my $line(`cat $file`){
     $line =~ s/#.*//;
