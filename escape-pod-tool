@@ -19,6 +19,7 @@ my $podcastConfigs = {
     podcastInitials => 'EP',
     firstUrlSuffix => '2005/05/12/ep001-imperial-by-jonathon-sullivan/',
     forumBoard => '1',
+    useArchive => 'false',
   }),
   podcastle => getConfig({
     podcastName => 'PodCastle',
@@ -26,6 +27,7 @@ my $podcastConfigs = {
     podcastInitials => 'PC',
     firstUrlSuffix => '2007/07/05/hello-world/',
     forumBoard => '57',
+    useArchive => 'false',
   }),
 };
 
@@ -74,6 +76,8 @@ sub ensureArticleUrlCache();
 sub getMissingArticleUrls($);
 sub getAllUrls();
 sub getNextUrl($);
+sub getAllUrlsFromArchive();
+sub getUrlsFromArchiveHtml($);
 sub getArticleUrls();
 sub getUrlOverrides($);
 sub readAttCache($);
@@ -89,6 +93,8 @@ sub newMP3FileName($);
 sub csv($);
 sub cell($);
 
+sub getCurrentMonth();
+sub getAllMonthsSince($$);
 sub arrEquals($$);
 sub uniqArr(@);
 sub run(@);
@@ -693,6 +699,9 @@ sub getMissingArticleUrls($){
 }
 
 sub getAllUrls(){
+  if($$config{useArchive} eq 'true'){
+    return getAllUrlsFromArchive();
+  }
   my $url = $$config{firstUrl};
   my @urls;
 
@@ -723,6 +732,48 @@ sub getNextUrl($){
     }
   }
   return undef;
+}
+
+sub getAllUrlsFromArchive(){
+  my $firstUrl = $$config{firstUrl};
+  if($firstUrl !~ /^$$config{baseUrl}\/(\d\d\d\d)\/(\d\d)/){
+    die "Error finding first archive month in '$firstUrl'\n";
+  }
+  my ($firstYear, $firstMonth) = ($1, $2);
+  my ($curYear, $curMonth) = getCurrentMonth();
+  my @urls;
+  for my $archiveMonth(getAllMonthsSince($firstYear, $firstMonth)){
+    my ($year, $month) = @$archiveMonth;
+    print "processing: $year/$month\n";
+    my $url = "$$config{baseUrl}/$year/$month";
+    if($year == $curYear and $month == $curMonth){
+      print "\nrefetching cur month\n";
+      refetchHtmlCache $url;
+    }else{
+      attemptPutHtmlCache $url;
+    }
+    my @archiveUrls = getUrlsFromArchiveHtml $url;
+    @urls = (@urls, @archiveUrls);
+  }
+
+  print "\n\nfetching articles\n";
+  for my $url(@urls){
+    attemptPutHtmlCache $url;
+  }
+  return @urls;
+}
+
+sub getUrlsFromArchiveHtml($){
+  my $url = shift;
+  my $html = readHtmlCache $url;
+  my @anchors = $html =~ /<a [^>]+>/g;
+  my @urls;
+  for my $anchor(@anchors){
+    if($anchor =~ /href="($$config{baseUrl}\/\d+\/\d+\/\d+\/[^"]+)"/){
+      push @urls, $1;
+    }
+  }
+  return sort @urls;
 }
 
 sub getArticleUrls(){
@@ -991,6 +1042,26 @@ sub cell($){
   }else{
     return $cell;
   }
+}
+
+sub getCurrentMonth(){
+  my @time = localtime;
+  return (1900 + $time[5], sprintf "%02d", 1+$time[4]);
+}
+sub getAllMonthsSince($$){
+  my ($year, $month) = @_;
+  my ($curYear, $curMonth) = getCurrentMonth();
+
+  my @months;
+  while ($year < $curYear or ($year == $curYear and $month <= $curMonth)){
+    push @months, [$year, sprintf "%02d", $month];
+    $month++;
+    if($month > 12){
+      $month = 1;
+      $year++;
+    }
+  }
+  return @months;
 }
 
 sub uniqArr(@){
