@@ -633,11 +633,15 @@ sub refetchHtmlCache($){
   my $file = htmlCacheFile $url;
   my $tmp = "$file.tmp";
 
-  run "mv", $file, $tmp;
-  if(ensureHtmlCache $url){
-    system "rm", $tmp;
+  if(-e $file){
+    run "mv", $file, $tmp;
+    if(ensureHtmlCache $url){
+      system "rm", $tmp;
+    }else{
+      system "mv", $tmp, $file;
+    }
   }else{
-    system "mv", $tmp, $file;
+    ensureHtmlCache $url;
   }
 }
 
