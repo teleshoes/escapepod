@@ -804,7 +804,12 @@ sub getAllUrlsFromArchive(){
     }
   }
   my %uniqUrls = map {$_ => 1} @urls;
-  @urls = sort keys %uniqUrls;
+  @urls = ();
+  for my $url(sort keys %uniqUrls){
+    next if defined $uniqUrls{"$url/"};
+    next if defined $uniqUrls{lc $url} and lc $url ne $url;
+    push @urls, $url;
+  }
 
   print "\n\nfetching articles\n";
   for my $url(@urls){
