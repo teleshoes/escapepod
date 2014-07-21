@@ -8,7 +8,7 @@ use File::Basename qw(dirname);
 sub getConfig($);
 
 my $config = undef;
-my @podcasts = qw(escapepod podcastle);
+my @podcasts = qw(escapepod podcastle pseudopod);
 my $defaultPodcast = "escapepod";
 my $okPodcasts = join "|", map {"--$_"} @podcasts;
 
@@ -30,6 +30,15 @@ my $podcastConfigs = {
     forumBoard => '57',
     useArchive => 'true',
     ignoreRating => 'false',
+  }),
+  pseudopod => getConfig({
+    podcastName => 'Pseudopod',
+    podcastWord => 'pseudopod',
+    podcastInitials => 'PP',
+    firstUrlSuffix => '2006/08/11/pseudopod-001-bag-man/',
+    forumBoard => '4',
+    useArchive => 'true',
+    ignoreRating => 'true',
   }),
 };
 
