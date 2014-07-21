@@ -27,7 +27,7 @@ my $podcastConfigs = {
     podcastInitials => 'PC',
     firstUrlSuffix => '2007/07/05/hello-world/',
     forumBoard => '57',
-    useArchive => 'false',
+    useArchive => 'true',
   }),
 };
 
