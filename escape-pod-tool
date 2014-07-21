@@ -763,6 +763,8 @@ sub getAllUrlsFromArchive(){
     my @archiveUrls = getUrlsFromArchiveHtml $url;
     @urls = (@urls, @archiveUrls);
   }
+  my %uniqUrls = map {$_ => 1} @urls;
+  @urls = sort keys %uniqUrls;
 
   print "\n\nfetching articles\n";
   for my $url(@urls){
