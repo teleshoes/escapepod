@@ -859,7 +859,7 @@ sub writeAttCache($$){
 sub extraInfo(){
   my $file = "$$config{infoDir}/extra-info";
   my $extraInfo = {};
-  for my $line(`cat $file`){
+  for my $line(`cat $file 2>/dev/null`){
     $line =~ s/#.*//;
     next if $line =~ /^\s*$/;
     if($line =~ /^(\d\d\d[ab]?) (title|author|reader|rating|forum|note) (.*)$/){
@@ -874,7 +874,7 @@ sub extraInfo(){
 sub personLinks(){
   my $file = "$$config{infoDir}/person-links";
   my $personLinks = {};
-  for my $line(`cat $file`){
+  for my $line(`cat $file 2>/dev/null`){
     $line =~ s/#.*//;
     next if $line =~ /^\s*$/;
     if($line =~ /^(.*)=>(.*)$/){
