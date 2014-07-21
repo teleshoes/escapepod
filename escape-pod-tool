@@ -80,6 +80,7 @@ sub checkHtmlCache($);
 sub attemptPutHtmlCache($);
 sub refetchHtmlCache($);
 sub attemptGunzip($);
+sub articleContainsText($$);
 sub readHtmlCache($);
 sub getMP3Url($);
 sub browserLoadArticle($);
@@ -677,6 +678,12 @@ sub attemptGunzip($){
   }
 }
 
+sub articleContainsText($$){
+  my ($url, $text) = @_;
+  my $html = readHtmlCache $url;
+  return $html =~ /\Q$text\E/;
+}
+
 sub readHtmlCache($){
   my $url = shift;
   my $cacheFile = htmlCacheFile $url;
@@ -776,15 +783,25 @@ sub getAllUrlsFromArchive(){
   for my $archiveMonth(getAllMonthsSince($firstYear, $firstMonth)){
     my ($year, $month) = @$archiveMonth;
     print "processing: $year/$month\n";
-    my $url = "$$config{baseUrl}/$year/$month";
-    if($year == $curYear and $month == $curMonth){
-      print "\nrefetching cur month\n";
-      refetchHtmlCache $url;
-    }else{
-      attemptPutHtmlCache $url;
+    my $curPage = 1;
+    my $hasNextPage = 1;
+    my $monthUrl = "$$config{baseUrl}/$year/$month";
+    while($hasNextPage){
+      my $url = $monthUrl;
+      $url = "$url/page/$curPage" if $curPage > 1;
+      if($year == $curYear and $month == $curMonth){
+        print "\nrefetching cur month\n";
+        refetchHtmlCache $url;
+      }else{
+        attemptPutHtmlCache $url;
+      }
+      my @archiveUrls = getUrlsFromArchiveHtml $url;
+      @urls = (@urls, @archiveUrls);
+      $curPage++;
+
+      my $nextUrl = "$monthUrl/page/$curPage/";
+      $hasNextPage = articleContainsText $url, $nextUrl;
     }
-    my @archiveUrls = getUrlsFromArchiveHtml $url;
-    @urls = (@urls, @archiveUrls);
   }
   my %uniqUrls = map {$_ => 1} @urls;
   @urls = sort keys %uniqUrls;
