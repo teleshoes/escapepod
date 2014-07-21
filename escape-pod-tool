@@ -703,6 +703,12 @@ sub getMissingArticleUrls($){
   my $max = max @numericEpNums;
   my @expectedNums = (1..$max);
   my @missing = grep {not defined $okNumericEpNums{$_}} @expectedNums;
+
+  my @missingEpisodes = `cat $$config{infoDir}/missing-episodes 2>/dev/null`;
+  chomp foreach @missingEpisodes;
+  my %expectedMissing = map {$_ => 1} @missingEpisodes;
+  @missing = grep {not defined $expectedMissing{$_}} @missing;
+
   return @missing;
 }
 
