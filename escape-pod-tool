@@ -468,6 +468,8 @@ sub parseHtml($$$$){
       $$info{reader} = $$ex{reader};
     }elsif($htmlNoMeta =~ /$readBy$span?$b?(?:<a [^>]*>)?$b?([^<(]+)/i){
       $$info{reader} = $1;
+    }elsif($htmlNoMeta =~ /your\s*reader[^<]*(?:<[^>]+>\s*)+([^<]+)</i){
+      $$info{reader} = $1;
     }
   }else{
     my @readers;
@@ -476,6 +478,11 @@ sub parseHtml($$$$){
     }
     if(@readers == 0){
       @readers = $htmlNoMeta =~ /\(narrator-? ([^)]+)\)/gi;
+    }
+    if(@readers == 0){
+      if($htmlNoMeta =~ /your\s*reader[^<]*(?:<[^>]+>\s*)+([^<]+)</i){
+        $$info{reader} = $1;
+      }
     }
     if(defined $$ex{reader}){
       $$info{reader} = $$ex{reader};
