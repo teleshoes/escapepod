@@ -20,6 +20,7 @@ my $podcastConfigs = {
     firstUrlSuffix => '2005/05/12/ep001-imperial-by-jonathon-sullivan/',
     forumBoard => '1',
     useArchive => 'false',
+    ignoreRating => 'false',
   }),
   podcastle => getConfig({
     podcastName => 'PodCastle',
@@ -28,6 +29,7 @@ my $podcastConfigs = {
     firstUrlSuffix => '2007/07/05/hello-world/',
     forumBoard => '57',
     useArchive => 'true',
+    ignoreRating => 'false',
   }),
 };
 
@@ -313,7 +315,7 @@ sub main(@){
           . " || [$articleUrl $$info{title}]$note"
           . " || " . fmtPersonLink($$info{author}, $personLinks)
           . " || " . fmtPersonLink($$info{reader}, $personLinks)
-          . " || $rating"
+          . ($$config{ignoreRating} eq "true" ? "" : " || $rating")
           . " || $$info{duration}"
           . " || $forum"
           . "\n"
@@ -475,6 +477,8 @@ sub parseHtml($$$$){
   if(defined $$info{reader} and $$info{reader} =~ /^\s*the\s*author\s*$/i){
     $$info{reader} = $$info{author};
   }
+
+  $$ex{rating} = "?" if $$config{ignoreRating} eq "true";
 
   if(defined $$ex{rating}){
     $$info{rating} = $$ex{rating};
