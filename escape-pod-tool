@@ -77,6 +77,7 @@ sub parseHtml($$$$);
 sub urlToFileName($);
 sub fileNameToUrl($);
 sub htmlCacheFile($);
+sub getCachedUrls();
 sub ensureHtmlCache($);
 sub checkHtmlCache($);
 sub attemptPutHtmlCache($);
@@ -608,6 +609,19 @@ sub htmlCacheFile($){
   die "html cache dir missing: '$htmlCacheDir'\n" if not -d $htmlCacheDir;
 
   return "$htmlCacheDir/$name";
+}
+
+sub getCachedUrls(){
+  my $htmlCacheDir = "$$config{cacheDir}/html-cache";
+  my @files = `ls "$htmlCacheDir" 2>/dev/null`;
+  my @urls;
+  for my $file(@files){
+    $file =~ s/.*\///;
+    $file =~ s/\n$//;
+    my $url = fileNameToUrl $file;
+    push @urls, $url;
+  }
+  return @urls;
 }
 
 sub ensureHtmlCache($){
