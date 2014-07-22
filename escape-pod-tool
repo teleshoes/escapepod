@@ -74,6 +74,8 @@ sub getConfig($){
 
 
 sub parseHtml($$$$);
+sub urlToFileName($);
+sub fileNameToUrl($);
 sub htmlCacheFile($);
 sub ensureHtmlCache($);
 sub checkHtmlCache($);
@@ -580,13 +582,25 @@ sub parseHtml($$$$){
   return $info;
 }
 
-sub htmlCacheFile($){
+sub urlToFileName($){
   my $url = shift;
   my $name = $url;
   $name =~ s/^\Q$$config{baseUrl}\E//;
   $name =~ s/^\///;
   $name =~ s/\/$//;
   $name =~ s/\//%%/g;
+  return $name;
+}
+
+sub fileNameToUrl($){
+  my $name = shift;
+  $name =~ s/%%/\//g;
+  return "$$config{baseUrl}/$name/";
+}
+
+sub htmlCacheFile($){
+  my $url = shift;
+  my $name = urlToFileName $url;
 
   my $htmlCacheDir = "$$config{cacheDir}/html-cache";
   run "mkdir", "-p", $htmlCacheDir if not -d $htmlCacheDir;
