@@ -808,7 +808,7 @@ sub getAllUrlsFromArchive(){
     die "Error finding first archive month in '$firstUrl'\n";
   }
   my ($firstYear, $firstMonth) = ($1, $2);
-  my $curMonthCache = getCurrentCalMonth();
+  my $calMonthCache = getLastCachedCalMonth();
   my @urls;
   for my $calMonth(getAllCalMonthsSince([$firstYear, $firstMonth])){
     my ($year, $month) = @$calMonth;
@@ -819,8 +819,8 @@ sub getAllUrlsFromArchive(){
     while($hasNextPage){
       my $url = $monthUrl;
       $url = "$url/page/$curPage" if $curPage > 1;
-      if(calMonthLtEq($curMonthCache, $calMonth)){
-        print "\nrefetching cur month\n";
+      if(defined $calMonthCache and calMonthLtEq($calMonthCache, $calMonth)){
+        print "\nat or after last cached month, refetching\n";
         refetchHtmlCache $url;
       }else{
         attemptPutHtmlCache $url;
