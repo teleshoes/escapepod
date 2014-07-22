@@ -109,6 +109,7 @@ sub csv($);
 sub cell($);
 
 sub calMonthLtEq($$);
+sub getLastCachedCalMonth();
 sub getCurrentCalMonth();
 sub getAllCalMonthsSince($);
 sub arrEquals($$);
@@ -1137,6 +1138,20 @@ sub calMonthLtEq($$){
   }else{
     return 0;
   }
+}
+
+sub getLastCachedCalMonth(){
+  my @urls = getCachedUrls();
+  my $maxCalMonth = undef;
+  for my $url(@urls){
+    if($url =~ /^\Q$$config{baseUrl}\E\/(\d\d\d\d)\/(\d\d)\/$/){
+      my $calMonth = [$1, $2];
+      if(not defined $maxCalMonth or calMonthLtEq($maxCalMonth, $calMonth)){
+        $maxCalMonth = $calMonth;
+      }
+    }
+  }
+  return $maxCalMonth;
 }
 
 sub getCurrentCalMonth(){
