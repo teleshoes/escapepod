@@ -107,8 +107,9 @@ sub newMP3FileName($);
 sub csv($);
 sub cell($);
 
-sub getCurrentMonth();
-sub getAllMonthsSince($$);
+sub calMonthLtEq($$);
+sub getCurrentCalMonth();
+sub getAllCalMonthsSince($);
 sub arrEquals($$);
 sub uniqArr(@);
 sub run(@);
@@ -792,10 +793,10 @@ sub getAllUrlsFromArchive(){
     die "Error finding first archive month in '$firstUrl'\n";
   }
   my ($firstYear, $firstMonth) = ($1, $2);
-  my ($curYear, $curMonth) = getCurrentMonth();
+  my $curMonthCache = getCurrentCalMonth();
   my @urls;
-  for my $archiveMonth(getAllMonthsSince($firstYear, $firstMonth)){
-    my ($year, $month) = @$archiveMonth;
+  for my $calMonth(getAllCalMonthsSince([$firstYear, $firstMonth])){
+    my ($year, $month) = @$calMonth;
     print "processing: $year/$month\n";
     my $curPage = 1;
     my $hasNextPage = 1;
@@ -803,7 +804,7 @@ sub getAllUrlsFromArchive(){
     while($hasNextPage){
       my $url = $monthUrl;
       $url = "$url/page/$curPage" if $curPage > 1;
-      if($year == $curYear and $month == $curMonth){
+      if(calMonthLtEq($curMonthCache, $calMonth)){
         print "\nrefetching cur month\n";
         refetchHtmlCache $url;
       }else{
@@ -1113,22 +1114,35 @@ sub cell($){
   }
 }
 
-sub getCurrentMonth(){
-  my @time = localtime;
-  return (1900 + $time[5], sprintf "%02d", 1+$time[4]);
+sub calMonthLtEq($$){
+  my ($oneCalMonth, $twoCalMonth) = @_;
+  my ($oneYear, $oneMonth) = @$oneCalMonth;
+  my ($twoYear, $twoMonth) = @$twoCalMonth;
+  if($oneYear < $twoYear or ($oneYear == $twoYear and $oneMonth <= $twoMonth)){
+    return 1;
+  }else{
+    return 0;
+  }
 }
-sub getAllMonthsSince($$){
-  my ($year, $month) = @_;
-  my ($curYear, $curMonth) = getCurrentMonth();
+
+sub getCurrentCalMonth(){
+  my @time = localtime;
+  return [1900 + $time[5], sprintf "%02d", 1+$time[4]];
+}
+sub getAllCalMonthsSince($){
+  my $calMonth = shift;
+  my $curCalMonth = getCurrentCalMonth();
 
   my @months;
-  while ($year < $curYear or ($year == $curYear and $month <= $curMonth)){
-    push @months, [$year, sprintf "%02d", $month];
+  while(calMonthLtEq($calMonth, $curCalMonth)){
+    my ($year, $month) = @$calMonth;
+    push @months, [sprintf("%04d", $year), sprintf("%02d", $month)];
     $month++;
     if($month > 12){
       $month = 1;
       $year++;
     }
+    $calMonth = [$year, $month];
   }
   return @months;
 }
