@@ -79,8 +79,9 @@ sub fileNameToUrl($);
 sub htmlCacheFile($);
 sub getCachedUrls();
 sub ensureHtmlCache($);
-sub checkHtmlCache($);
 sub attemptPutHtmlCache($);
+sub checkHtmlFile($);
+sub downloadHtmlFile($$);
 sub refetchHtmlCache($);
 sub attemptGunzip($);
 sub articleContainsText($$);
@@ -630,55 +631,64 @@ sub getCachedUrls(){
 
 sub ensureHtmlCache($){
   my $url = shift;
+  my $cacheFile = htmlCacheFile $url;
+
   my $attempts;
-  return 1 if checkHtmlCache $url;
+  return 1 if checkHtmlFile $cacheFile;
 
   $attempts = 10;
-  while($attempts > 0 and not checkHtmlCache $url){
+  while($attempts > 0 and not checkHtmlFile $cacheFile){
     $attempts--;
     attemptPutHtmlCache $url;
   }
-  if(not checkHtmlCache $url){
+  if(not checkHtmlFile $cacheFile){
     browserLoadArticle $url;
   }
   $attempts = 10;
-  while($attempts > 0 and not checkHtmlCache $url){
+  while($attempts > 0 and not checkHtmlFile $cacheFile){
     $attempts--;
     attemptPutHtmlCache $url;
   }
 
-  return checkHtmlCache $url;
-}
-
-sub checkHtmlCache($){
-  my $url = shift;
-  my $cacheFile = htmlCacheFile $url;
-  return 0 if not -e $cacheFile;
-  my $html = `cat $cacheFile`;
-  if($html =~ /<html/){
-    return 1;
-  }else{
-    return 0;
-  }
+  return checkHtmlFile $cacheFile;
 }
 
 sub attemptPutHtmlCache($){
   my $url = shift;
-
   my $cacheFile = htmlCacheFile $url;
-  return 1 if checkHtmlCache $url;
 
-  run "curl -k -L \"$url\" -o \"$cacheFile\" 2>/dev/null";
-  return 1 if checkHtmlCache $url;
-  attemptGunzip($cacheFile);
-  return 1 if checkHtmlCache $url;
+  downloadHtmlFile $url, $cacheFile;
+}
 
-  run "wget \"$url\" -O \"$cacheFile\" 2>/dev/null";
-  return 1 if checkHtmlCache $url;
-  attemptGunzip($cacheFile);
-  return 1 if checkHtmlCache $url;
+sub checkHtmlFile($){
+  my ($file) = @_;
+  if(-f $file){
+    open FH, "< $file" or die "Could not read $file\n";
+    my $content = join '', <FH>;
+    close FH;
+    if($content =~ /<html/){
+      return 1;
+    }
+  }
+  return 0;
+}
 
-  run "rm", "-f", $cacheFile;
+sub downloadHtmlFile($$){
+  my ($url, $file) = @_;
+
+  return 1 if checkHtmlFile $file;
+
+  run "curl -k -L \"$url\" -o \"$file\" 2>/dev/null";
+  return 1 if checkHtmlFile $file;
+  attemptGunzip($file);
+  return 1 if checkHtmlFile $file;
+
+  run "wget \"$url\" -O \"$file\" 2>/dev/null";
+  return 1 if checkHtmlFile $file;
+  attemptGunzip($file);
+  return 1 if checkHtmlFile $file;
+
+  run "rm", "-f", $file;
   return 0;
 }
 
@@ -720,7 +730,7 @@ sub articleContainsText($$){
 sub readHtmlCache($){
   my $url = shift;
   my $cacheFile = htmlCacheFile $url;
-  die "Missing html file for $url\n" if not checkHtmlCache $url;
+  die "Missing html file for $url\n" if not checkHtmlFile $cacheFile;
   open FH, "< $cacheFile" or die "failed to read $cacheFile\n";
   my @lines = <FH>;
   close FH;
