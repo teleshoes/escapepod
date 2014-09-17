@@ -81,10 +81,10 @@ sub getCachedUrls();
 sub ensureHtmlCache($);
 sub attemptPutHtmlCache($);
 sub checkHtmlFile($);
-sub downloadHtmlFile($$);
-sub readUrl($);
+sub downloadHtmlFile($$;$);
+sub readUrl($;$);
 sub refetchHtmlCache($);
-sub attemptGunzip($);
+sub attemptGunzip($;$);
 sub articleContainsText($$);
 sub readHtmlCache($);
 sub getMP3Url($);
@@ -117,7 +117,9 @@ sub getAllCalMonthsSince($);
 sub arrEquals($$);
 sub uniqArr(@);
 sub run(@);
+sub runMaybeQuiet($@);
 sub tryrun(@);
+sub tryrunMaybeQuiet($@);
 
 my @ratings = (
   "G"     => 'OK for Kids',
@@ -674,30 +676,30 @@ sub checkHtmlFile($){
   return 0;
 }
 
-sub downloadHtmlFile($$){
-  my ($url, $file) = @_;
+sub downloadHtmlFile($$;$){
+  my ($url, $file, $quiet) = (@_, 0);
 
   return 1 if checkHtmlFile $file;
 
-  run "curl -k -L \"$url\" -o \"$file\" 2>/dev/null";
+  runMaybeQuiet $quiet, "curl -k -L \"$url\" -o \"$file\" 2>/dev/null";
   return 1 if checkHtmlFile $file;
-  attemptGunzip($file);
-  return 1 if checkHtmlFile $file;
-
-  run "wget \"$url\" -O \"$file\" 2>/dev/null";
-  return 1 if checkHtmlFile $file;
-  attemptGunzip($file);
+  attemptGunzip($file, $quiet);
   return 1 if checkHtmlFile $file;
 
-  run "rm", "-f", $file;
+  runMaybeQuiet $quiet, "wget \"$url\" -O \"$file\" 2>/dev/null";
+  return 1 if checkHtmlFile $file;
+  attemptGunzip($file, $quiet);
+  return 1 if checkHtmlFile $file;
+
+  runMaybeQuiet $quiet, "rm", "-f", $file;
   return 0;
 }
 
-sub readUrl($){
-  my ($url) = @_;
+sub readUrl($;$){
+  my ($url, $quiet) = (@_, 0);
   my $file = "/tmp/escape-pod-tool-" . time . ".html";
   system "rm", "-f", $file;
-  if(downloadHtmlFile $url, $file){
+  if(downloadHtmlFile $url, $file, $quiet){
     my $content = `cat $file`;
     system "rm", "-f", $file;
     return $content;
@@ -723,14 +725,14 @@ sub refetchHtmlCache($){
   }
 }
 
-sub attemptGunzip($){
-  my $file = shift;
+sub attemptGunzip($;$){
+  my ($file, $quiet) = @_;
   if(-e $file){
-    run "mv", $file, "$file.gz";
-    tryrun "gunzip", "$file.gz";
+    runMaybeQuiet $quiet, "mv", $file, "$file.gz";
+    tryrunMaybeQuiet $quiet, "gunzip", "$file.gz";
   }
   if(-e "$file.gz"){
-    run "rm", "-f", "$file.gz";
+    runMaybeQuiet $quiet, "rm", "-f", "$file.gz";
   }
 }
 
@@ -1044,7 +1046,7 @@ sub crawlForum(){
   while($page < 50){
     my $board = "$$config{forumBoard}." . (20*$page);
     my $url = "$$config{forumUrl}?board=$board";
-    my $html = readUrl $url;
+    my $html = readUrl $url, 1;
     my $pageEps = [];
     my $forumAnchor = "";
     my %eps;
@@ -1222,11 +1224,19 @@ sub arrEquals($$){
 }
 
 sub run(@){
-  tryrun @_;
+  runMaybeQuiet 0, @_;
+}
+sub runMaybeQuiet($@){
+  my $quiet = shift;
+  tryrunMaybeQuiet $quiet, @_;
   die "error running @_\n" if $? != 0;
 }
 sub tryrun(@){
-  print "@_\n";
+  tryrunMaybeQuiet 0, @_;
+}
+sub tryrunMaybeQuiet($@){
+  my $quiet = shift;
+  print "@_\n" if not $quiet;
   system @_;
 }
 
