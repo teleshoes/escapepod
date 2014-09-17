@@ -588,6 +588,7 @@ sub parseHtml($$$$){
 sub urlToFileName($){
   my $url = shift;
   my $name = $url;
+  $name =~ s/^https:/http:/;
   $name =~ s/^\Q$$config{baseUrl}\E//;
   $name =~ s/^\///;
   $name =~ s/\/$//;
