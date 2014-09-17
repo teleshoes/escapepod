@@ -82,6 +82,7 @@ sub ensureHtmlCache($);
 sub attemptPutHtmlCache($);
 sub checkHtmlFile($);
 sub downloadHtmlFile($$);
+sub readUrl($);
 sub refetchHtmlCache($);
 sub attemptGunzip($);
 sub articleContainsText($$);
@@ -692,6 +693,18 @@ sub downloadHtmlFile($$){
   return 0;
 }
 
+sub readUrl($){
+  my ($url) = @_;
+  my $file = "/tmp/escape-pod-tool-" . time . ".html";
+  system "rm", "-f", $file;
+  if(downloadHtmlFile $url, $file){
+    my $content = `cat $file`;
+    system "rm", "-f", $file;
+    return $content;
+  }
+  return undef;
+}
+
 sub refetchHtmlCache($){
   my $url = shift;
 
@@ -1031,7 +1044,7 @@ sub crawlForum(){
   while($page < 50){
     my $board = "$$config{forumBoard}." . (20*$page);
     my $url = "$$config{forumUrl}?board=$board";
-    my $html = `curl -k -L \"$url\" 2>/dev/null`;
+    my $html = readUrl $url;
     my $pageEps = [];
     my $forumAnchor = "";
     my %eps;
