@@ -665,7 +665,7 @@ sub attemptPutHtmlCache($){
   my $cacheFile = htmlCacheFile $url;
   return 1 if checkHtmlCache $url;
 
-  run "curl -L \"$url\" -o \"$cacheFile\" 2>/dev/null";
+  run "curl -k -L \"$url\" -o \"$cacheFile\" 2>/dev/null";
   return 1 if checkHtmlCache $url;
   attemptGunzip($cacheFile);
   return 1 if checkHtmlCache $url;
@@ -1018,7 +1018,7 @@ sub crawlForum(){
   while($page < 50){
     my $board = "$$config{forumBoard}." . (20*$page);
     my $url = "$$config{forumUrl}?board=$board";
-    my $html = `curl -L \"$url\" 2>/dev/null`;
+    my $html = `curl -k -L \"$url\" 2>/dev/null`;
     my $pageEps = [];
     my $forumAnchor = "";
     my %eps;
