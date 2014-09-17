@@ -384,6 +384,8 @@ sub main(@){
 
 sub parseHtml($$$$){
   my ($epNum, $url, $ex, $isLast) = @_;
+  $url =~ s/^https:/http:/;
+
   my $html = readHtmlCache $url;
 
   my $info = {};
