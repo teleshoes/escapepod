@@ -536,6 +536,9 @@ sub parseHtml($$$$){
         if($html =~ /<meta property="article:section" content="$cat"\s*\/>/){
           $$info{rating} = $rating;
           last;
+        }elsif($html =~ /<a[^>]*>$cat<\/a>/){
+          $$info{rating} = $rating;
+          last;
         }
       }
     }
