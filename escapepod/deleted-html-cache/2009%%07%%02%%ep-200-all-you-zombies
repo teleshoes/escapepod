@@ -1,0 +1,1106 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>EP 200: All You Zombies - Escape Pod  : Escape Pod</title>
+
+<meta name="generator" content="WordPress 494" />
+
+<link rel="stylesheet" href="http://escapepod.org/wp-content/themes/wp-sublime_basic/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="http://escapepod.org/wp-content/themes/wp-sublime_basic/css/charc.css" type="text/css" media="screen" />
+
+<link rel="alternate" type="application/rss+xml" title="Escape Pod RSS Feed" href="http://escapepod.org/feed/" />
+
+<link rel="pingback" href="http://escapepod.org/xmlrpc.php" />
+
+
+<style type='text/css'>
+					.no-break br {
+						display: none !important;
+					}
+			</style>
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="EP 200: All You Zombies - Escape Pod" />
+<meta property="og:description" content="By Robert A. Heinlein Read by Steve Eley I was polishing a brandy snifter when the Unmarried Mother came in. I noted the time—10:17 P. M. zone five, or eastern time, November 7th, 1970. Temporal agents always notice time and date; we must. The Unmarried Mother was a man twenty–five years old, no taller than &hellip;" />
+<meta property="og:url" content="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/" />
+<meta property="og:site_name" content="Escape Pod" />
+<meta property="article:publisher" content="https://www.facebook.com/escapepodscifi" />
+<meta property="article:section" content="Podcasts" />
+<meta property="article:section" content="Uncategorized" />
+<meta property="article:published_time" content="2009-07-02T19:32:51+00:00" />
+<meta property="fb:admins" content="1223043758" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@escapepodcast"/>
+<meta name="twitter:domain" content="Escape Pod"/>
+<meta name="twitter:creator" content="@escapepodcast"/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Escape Pod &raquo; EP 200:  All You Zombies Comments Feed" href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/feed/" />
+<link rel='stylesheet' id='podpress_frontend_styles-css'  href='http://escapepod.org/wp-content/plugins/podpress/style/podpress.css' type='text/css' media='all' />
+<script type="text/javascript">
+//<![CDATA[
+var podpressL10 = {
+	openblogagain : 'back to:',
+	theblog : 'the blog',
+	close : 'close',
+	playbutton : 'Play &gt;'
+}
+//]]>
+</script>
+<script type="text/javascript" src="http://escapepod.org/wp-content/plugins/podpress/players/1pixelout/1pixelout_audio-player.js"></script>
+<script type="text/javascript">//<![CDATA[
+	var podPressPlayerFile = "1pixelout_player.swf";
+	var podPressPopupPlayerOpt = new Object();
+	podPressPopupPlayerOpt["bg"] = "F8F8F8";
+	podPressPopupPlayerOpt["leftbg"] = "EEEEEE";
+	podPressPopupPlayerOpt["rightbg"] = "CCCCCC";
+	podPressPopupPlayerOpt["rightbghover"] = "999999";
+	podPressPopupPlayerOpt["lefticon"] = "666666";
+	podPressPopupPlayerOpt["righticon"] = "666666";
+	podPressPopupPlayerOpt["righticonhover"] = "FFFFFF";
+	podPressPopupPlayerOpt["text"] = "666666";
+	podPressPopupPlayerOpt["slider"] = "666666";
+	podPressPopupPlayerOpt["track"] = "FFFFFF";
+	podPressPopupPlayerOpt["loader"] = "9FFFB8";
+	podPressPopupPlayerOpt["border"] = "666666";
+	podPressPopupPlayerOpt["volslider"] = "666666";
+	podPressPopupPlayerOpt["voltrack"] = "FFFFFF";
+	podPressPopupPlayerOpt["tracker"] = "DDDDDD";
+	podPressPopupPlayerOpt["skip"] = "666666";
+	podPressPopupPlayerOpt["initialvolume"] = "70";
+	podPressPopupPlayerOpt["buffer"] = "5";
+	podPressPopupPlayerOpt["checkpolicy"] = "no";
+	podPressPopupPlayerOpt["animation"] = "yes";
+	podPressPopupPlayerOpt["remaining"] = "no";
+	podpressAudioPlayer.setup("http://escapepod.org/wp-content/plugins/podpress/players/1pixelout/" + podPressPlayerFile, {bg:"F8F8F8", leftbg:"EEEEEE", rightbg:"CCCCCC", rightbghover:"999999", lefticon:"666666", righticon:"666666", righticonhover:"FFFFFF", text:"666666", slider:"666666", track:"FFFFFF", loader:"9FFFB8", border:"666666", volslider:"666666", voltrack:"FFFFFF", tracker:"DDDDDD", skip:"666666", initialvolume:"70", buffer:"5", checkpolicy:"no", animation:"yes", remaining:"no",  pagebg:"FFFFFF", transparentpagebg:"yes", encode: "no"} );
+//]]></script>
+<script type="text/javascript">//<![CDATA[
+var podPressBlogURL = "http://escapepod.org/";
+var podPressBackendURL = "http://escapepod.org/wp-content/plugins/podpress/";
+var podPressDefaultPreviewImage = "http://escapepod.org/wp-content/plugins/podpress/images/vpreview_center.png";
+var podPressMP3PlayerWrapper = false;
+var podPress_cortado_signed = false;
+var podPressOverwriteTitleandArtist = false;
+var podPressHTML5 = true;
+var podPressHTML5_showplayersdirectly = false;
+var podPressText_PlayNow = "Play Now";
+var podPressText_HidePlayer = "Hide Player";
+//]]></script>
+<script type='text/javascript' src='http://escapepod.org/wp-content/plugins/podpress/js/podpress.js'></script>
+<link rel='shortlink' href='http://escapepod.org/?p=407' />
+<script charset="utf-8" type="text/javascript">var switchTo5x=true;</script><script charset="utf-8" type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'wp.b54bbe85-bfc8-462c-bdbf-9118bd4cb1a0'});var st_type='wordpress3.3.2';</script>
+<!-- Simple Social Buttons style sheet -->
+<style type="text/css">
+   div.simplesocialbuttons { height: 20px; margin: 10px auto 10px 0; text-align: left; clear: left; }
+   div.simplesocialbutton { float: left; }
+   div.ssb-button-googleplus { width: 100px; }
+   div.ssb-button-fblike { width: 140px; line-height: 1; }
+   div.ssb-button-twitter { width: 130px; }
+   div.ssb-button-pinterest { width: 100px; }
+   .fb-like iframe { max-width: none !important; }
+</style>
+<!-- End of Simple Social Buttons -->
+
+<link href="http://escapepod.org/wp-content/themes/wp-sublime_basic/style.php" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+(function(url){
+if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+var wfscr = document.createElement('script');
+wfscr.type = 'text/javascript';
+wfscr.async = true;
+wfscr.src = url + '&r=' + Math.random();
+(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+})('//escapepod.org/wp-admin/admin-ajax.php?action=wordfence_logHuman&hid=E193E6058F9F5EC76CE268047CCEDA83'); 
+</script>
+<script type="text/javascript" src="http://escapepod.org/wp-content/themes/wp-sublime_basic/js/suckerfish.js"></script>
+<script type="text/javascript" src="http://escapepod.org/wp-content/themes/wp-sublime_basic/js/external.js"></script>
+<!--[if lt IE 8]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+<![endif]-->
+<!--PNG Fix for IE6-->
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://escapepod.org/wp-content/themes/wp-sublime_basic/iepngfix/iepngfix_tilebg.js"></script>
+<style>
+#wrap, .navscreen  { behavior:url(http://escapepod.org/wp-content/themes/wp-sublime_basic/iepngfix/iepngfix.htc); }
+#wrap-top, #wrap-bottom { height:0; display:none; background:transparent; }
+</style>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div id="wrap-top"></div>
+
+<div id="wrap">
+
+	
+	
+	<div id="header" class="clearfix">
+
+		<div id="head-content" class="clearfix" onclick="location.href='http://escapepod.org';" style="cursor: pointer;">
+			<div id="sitetitle">
+				<div class="title"><a href="http://escapepod.org">Escape Pod</a></div> 
+				<div class="description">The Science Fiction Podcast Magazine.  Each week Escape Pod delivers science fiction short stories from today&#039;s best authors.  Listen today, and hear the new sound of science fiction!</div>
+			</div>
+
+		</div>
+
+	</div>
+
+		<div id="topnav" class="clearfix">
+		<div class="navscreen clearfix">
+						<div class="menu-top-container"><ul id="menu-top" class="menu"><li id="menu-item-4489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4489"><a href="http://escapepod.org/about/">About</a></li>
+<li id="menu-item-4490" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4490"><a href="http://escapepod.org/conditions-of-use/">Conditions of Use</a></li>
+<li id="menu-item-4491" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4491"><a href="http://escapepod.org/contact-us/">Contact Us</a></li>
+<li id="menu-item-4492" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4492"><a href="http://escapepod.org/subscribe/">How To Subscribe</a></li>
+<li id="menu-item-4493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4493"><a href="http://escapepod.org/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4494"><a href="http://escapepod.org/guidelines/">Submission Guidelines</a>
+<ul class="sub-menu">
+	<li id="menu-item-4495" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4495"><a href="http://escapepod.org/guidelines/reviews/">Reviews</a></li>
+</ul>
+</li>
+<li id="menu-item-4496" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4496"><a href="http://forum.escapeartists.net/index.php">Forums</a></li>
+</ul></div>						
+<div id="search">
+	<form id="searchform" method="get" action="http://escapepod.org/" ><input type="text" value="enter search terms" onfocus="if (this.value == 'enter search terms') {this.value = '';}" onblur="if (this.value == '') {this.value = 'enter search terms';}" size="18" maxlength="50" name="s" id="searchfield" /><input type="image" src="http://escapepod.org/wp-content/themes/wp-sublime_basic/images/blank.gif" id="submitbutton" alt="go" /></form>
+</div>		</div>
+	</div>
+	
+	
+	<div id="page" class="clearfix">
+
+		<div id="contentleft" class="maincontent">
+
+			<div id="content">
+
+				
+
+
+				<div class="singlepost">
+
+					<div class="post clearfix" id="post-main-407">
+
+						<a href="http://escapepod.org/2009/07/11/ep206-rogue-farm/" rel="next" title="EP206: Rogue Farm">EP206: Rogue Farm</a> &raquo;						<div class="entry">
+
+							<h1 class="post-title"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/" rel="bookmark" title="Permanent Link to EP 200:  All You Zombies">EP 200:  All You Zombies</a></h1>
+
+							
+
+<div class="postinfo">
+	Filed in <a href="http://escapepod.org/category/podcasts/" rel="category tag">Podcasts</a>, <a href="http://escapepod.org/category/uncategorized/" rel="category tag">Uncategorized</a> on July 2, 2009 with <a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/#comments">32 comments</a>
+</div>
+
+
+							
+<ul class="post-tools">
+	</li>
+	<li class="stumble"><a href="http://www.stumbleupon.com/submit?url=http://escapepod.org/2009/07/02/ep-200-all-you-zombies/&amp;title=EP 200:  All You Zombies" rel="external" title="Share on Stumbleupon">Stumble This</a></li>
+	<li class="digg"><a href="http://digg.com/submit?phase=2&amp;url=http://escapepod.org/2009/07/02/ep-200-all-you-zombies/" title="Share on Digg" rel="external">Digg This</a></li>
+	<li class="delicious"><a href="http://del.icio.us/post?url=http://escapepod.org/2009/07/02/ep-200-all-you-zombies/&amp;title=EP 200:  All You Zombies" title="Share on Delicious" rel="external">Share on Delicious</a></li>
+	<li class="fb"><a href="http://www.facebook.com/sharer.php?u=http://escapepod.org/2009/07/02/ep-200-all-you-zombies/&amp;t=EP 200:  All You Zombies" title="Share on Facebook" rel="external">Share on Facebook</a></li>
+	<li class="twitter"><a href="http://twitter.com/home?status=Currently reading http://escapepod.org/2009/07/02/ep-200-all-you-zombies/" title="Share This on Twitter" rel="external">Tweet This</a></li>
+	</ul>
+
+							<div class="podPress_content podPress_content_audio_mp3">
+<div class="podpress_playerspace podpress_playerspace_audio_mp3 podpress_mp3player" style="display:block;" ><div id="podPressPlayerSpace_1"><!-- podPress --></div></div>
+<div class="podPress_downloadlinks podPress_downloadlinks_audio_mp3"><a href="http://media.rawvoice.com/escapepod/media.libsyn.com/media/escapepod/EP200_AllYouZombies.mp3" target="new" title="Download: Standard Podcast" class="podpress_downloadimglink podpress_downloadimglink_audio_mp3"><img src="http://escapepod.org/wp-content/plugins/podpress/images/audio_mp3_button.png" class="podPress_imgicon podpress_imgicon_audio_mp3" alt="" /></a> <span class="podpress_mediafile_title podpress_mediafile_title_audio_mp3">Standard Podcast</span> <span class="podpress_mediafile_dursize podpress_mediafile_dursize_audio_mp3">[ 0:01 ]</span> <a href="#podPressPlayerSpace_1" class="podpress_playlink podpress_playlink_audio_mp3" onclick="javascript:podPressShowHidePlayer('1', 'http://media.rawvoice.com/escapepod/media.libsyn.com/media/escapepod/EP200_AllYouZombies.mp3', 290, 24, 'false', 'http://escapepod.org/wp-content/plugins/podpress//images/vpreview_center.png', 'Standard Podcast', 'Robert A. Heinlein'); return false;"><span id="podPressPlayerSpace_1_PlayLink" class="podPress_playerspace_playlink">Play Now</span></a><input type="hidden" id="podPressPlayerSpace_1_OrigURL" value="http://media.rawvoice.com/escapepod/media.libsyn.com/media/escapepod/EP200_AllYouZombies.mp3" /> | <a href="#podPressPlayerSpace_1" class="podpress_playinpopup podpress_playinpopup_audio_mp3" onclick="javascript:podPressPopupPlayer('1', 'http://media.rawvoice.com/escapepod/media.libsyn.com/media/escapepod/EP200_AllYouZombies.mp3', 290, 24, 'Escape Pod', '407', 'Standard Podcast', 'Robert A. Heinlein'); return false;">Play in Popup</a> | <a href="http://media.rawvoice.com/escapepod/media.libsyn.com/media/escapepod/EP200_AllYouZombies.mp3" target="new" class="podpress_downloadlink podpress_downloadlink_audio_mp3">Download</a></div></div>
+<script type="text/javascript">podPressShowHidePlayer('1', 'http://media.rawvoice.com/escapepod/media.libsyn.com/media/escapepod/EP200_AllYouZombies.mp3', 290, 24, 'false', 'http://escapepod.org/wp-content/plugins/podpress//images/vpreview_center.png', 'Standard Podcast', 'Robert A. Heinlein');</script><div class="simplesocialbuttons">
+<div class="simplesocialbutton ssb-button-fblike"><!-- Facebook like--><div id="fb-root"></div><div class="fb-like" data-href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/" data-send="false" data-layout="button_count" data-show-faces="false"></div></div>
+<div class="simplesocialbutton ssb-button-twitter"><!-- Twitter--><a href="https://twitter.com/share" class="twitter-share-button" data-text="EP 200:  All You Zombies" data-url="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/" rel="nofollow"></a></div>
+<div class="simplesocialbutton ssb-button-googleplus"><!-- Google Plus One--><div class="g-plusone" data-size="medium" data-href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/"></div></div>
+</div>
+<p><strong>By Robert A. Heinlein</strong><br />
+Read by Steve Eley<a href="http://www.hootingyard.org/"></a></p>
+<p><em>I was polishing a brandy snifter when the Unmarried Mother came in. I noted the time—10:17 P. M. zone five, or eastern time, November 7th, 1970. Temporal agents always notice time and date; we must. </em></p>
+<p><em>The Unmarried Mother was a man twenty–five years old, no taller than I am, childish features and a touchy temper. I didn’t like his looks—I never had—but he was a lad I was here to recruit, he was my boy. I gave him my best barkeep’s smile. </em></p>
+<p><em>Maybe I’m too critical. He wasn’t swish; his nickname came from what he always said when some nosy type asked him his line: “I’m an unmarried mother.” If he felt less than murderous he would add: “at four cents a word. I write confession stories.” </em></p>
+<p><em>If he felt nasty, he would wait for somebody to make something of it. He had a lethal style of infighting, like a female cop—reason I wanted him. Not the only one. </em></p>
+<p><em>He had a load on, and his face showed that he despised people more than usual. Silently I poured a double shot of Old Underwear and left the bottle. He drank it, poured another. </em></p>
+
+						</div>
+
+						
+<div id="related" class="clearfix">
+
+
+	<div class="subscribe">
+
+		<p class="intro">If you enjoyed this article, subscribe to receive more great content just like it.</p>
+
+		<p class="feed"><a href="http://escapepod.org/feed/">Subscribe via RSS Feed</a></p>
+
+
+	</div>
+
+</div>
+
+						
+
+					</div>
+
+					
+
+<!-- You can start editing here. -->
+
+
+<div class="allcomments">
+
+	<h3 id="comments">Comments (32)</h3>
+
+	<p class="comments-number"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/trackback/" title="Trackback URL">Trackback URL</a> | <a title="Comments RSS Feed for This Entry" href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/feed">Comments RSS Feed</a></p>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-12874">
+				<div id="div-comment-12874" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/b6bba3aeb2bd623f17a9764742cb3243?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://cook.ie' rel='external nofollow' class='url'>Dick Gizinya</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12874">
+			July 2, 2009 at 8:34 pm</a>		</div>
+
+		<p>Well it&#8217;s about time. Moderately impressed considering the unfailingly liberal mindset of this website.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12875">
+				<div id="div-comment-12875" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/4cc3228235cda51524d76a07228a42fc?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Governor Sanford's soulmate</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12875">
+			July 2, 2009 at 9:05 pm</a>		</div>
+
+		<p>Like they say, Dick, reality has a well-known liberal bias. I guess they can say the same about fantastic literature.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12876">
+				<div id="div-comment-12876" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/638416938f06e0d67618fafbdcf095fd?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Derrek</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12876">
+			July 2, 2009 at 10:02 pm</a>		</div>
+
+		<p>Theoretically, this story could only have one character. Also, I wanted zombies.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12877">
+				<div id="div-comment-12877" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/560f50c3fb27887fc900db596f51993f?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Holiday</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12877">
+			July 2, 2009 at 10:31 pm</a>		</div>
+
+		<p>Considering when this story was originally written, this would have pushed some boundries.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12879">
+				<div id="div-comment-12879" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/ac6a2d876ec4a2ad03157be02f667e5f?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://omega-geek.blogspot.com' rel='external nofollow' class='url'>Spook</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12879">
+			July 3, 2009 at 1:57 am</a>		</div>
+
+		<p>Damn, no wonder this took so long.  I&#8217;m impressed anyway, this is a classic!</p>
+<p>Thanks!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12882">
+				<div id="div-comment-12882" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/676b0b9914a32b281323f8515ee4b5ce?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">pmdhazy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12882">
+			July 3, 2009 at 4:32 pm</a>		</div>
+
+		<p>Thanks for that &#8211; it is one story I have never forgotten since I read it and great to hear it again.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12885">
+				<div id="div-comment-12885" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/b5ba48f16eeb5e2180c545d2031a6e75?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://l33tminion.livejournal.com/' rel='external nofollow' class='url'>L33tminion</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12885">
+			July 3, 2009 at 9:08 pm</a>		</div>
+
+		<p>I <i>love</i> this story.  Read it before, and was really glad to hear it on Escape Pod.  I love time travel stories&#8230; plus solipsism isn&#8217;t a philosophy you see played with that often in fiction.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12886">
+				<div id="div-comment-12886" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/bf7e2aa252e3605d1d4e333f1afd5587?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Lexicat</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12886">
+			July 4, 2009 at 11:23 am</a>		</div>
+
+		<p>The gender change stuff was retarded. Which I say as a transsexual, and as a genderfuck. The gender roles of women, while somewhat normed to white women the US 1958, is not remotely forward looking with respect to the transformations in gender which were moving towards the social upheavals in gender of the 60s and 70s.</p>
+<p>The reduction of failed aspirations on the part of the young woman to physical appearance was just dumb.</p>
+<p>Bad choice for 200.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12887">
+				<div id="div-comment-12887" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/de035884742bbb025aa2fbe6ed17bed8?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Jeff Weimer</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12887">
+			July 4, 2009 at 11:33 am</a>		</div>
+
+		<p>I was right! Heinlein! And I haven&#8217;t read this one before!</p>
+<p>And guys, keep the political stuff out. This isn&#8217;t the place. Try HuffPo, or Redstate, depending on your inclination.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12888">
+				<div id="div-comment-12888" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/3a1a6ccb2848924b5dcf7572badd9abc?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://slashdot.org/~Dr_Ken/' rel='external nofollow' class='url'>Ken_K</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12888">
+			July 4, 2009 at 12:03 pm</a>		</div>
+
+		<p>A good blast from the past. How about moving on from all the time travel stuff for a while though? Just a thought.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12890">
+				<div id="div-comment-12890" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/b6dcd3bb2d8337403d226d11f58866d0?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Gia</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12890">
+			July 4, 2009 at 3:09 pm</a>		</div>
+
+		<p>I called most of the plot before hand. If Steve hadn&#8217;t started off with &#8220;This has a time loop!&#8221; then it might not have been so predictable. It would have been a good regular episode, but it didn&#8217;t meet the hype.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12891">
+				<div id="div-comment-12891" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/bf7e2aa252e3605d1d4e333f1afd5587?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Lexicat</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12891">
+			July 4, 2009 at 3:13 pm</a>		</div>
+
+		<p>Oh yeah, and I totally agree with Derrek: this story needed actual zombies!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12892">
+				<div id="div-comment-12892" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/4b0802b371f510b58cb3710e300544b4?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Julio</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12892">
+			July 4, 2009 at 6:35 pm</a>		</div>
+
+		<p>Steve, episode 200 was awesome! I had read about this story, but had never actually read/heard it. Everything from the computer lady mix up, the story and outro was great!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12893">
+				<div id="div-comment-12893" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/9a8c0b64996510e93042a316c4a07a6c?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Anony</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12893">
+			July 4, 2009 at 6:57 pm</a>		</div>
+
+		<p>At last it&#8217;s here!<br />
+I got sucked into it reading the description. Cant wait to listen to this at work.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12895">
+				<div id="div-comment-12895" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/525ceb06bc8862932d853a033411e3b7?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Duellist Origins</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12895">
+			July 5, 2009 at 9:37 am</a>		</div>
+
+		<p>I think some stories are too well-known for this podcast. I&#8217;ve listened to this so many times that I just skipped this episode.</p>
+<p>And I bet you didn&#8217;t pay your usual rates for this. Something for other authors to consider.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12896">
+				<div id="div-comment-12896" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/6183c6f9d621a125cd3aa0f7ae324285?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Motti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12896">
+			July 6, 2009 at 11:06 am</a>		</div>
+
+		<p>I&#8217;ve always considered this to be the best time travel paradox story of all time, however hearing it now brings to light how much it&#8217;s dated (not that I have ever read it before it had dated). This puts in in an interesting category of &#8220;anachronistic time travel stories&#8221;.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12898">
+				<div id="div-comment-12898" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/1604f859bb02bc1b0df3574e9dd9f94d?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">scatterbrain</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12898">
+			July 6, 2009 at 5:03 pm</a>		</div>
+
+		<p>Strangely I was just about to read this one in the F&amp;SF 30th Anniversary Special, but I&#8217;m glad I heard it in Steve Eley&#8217;s talented and familiar narration first; good work!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12899">
+				<div id="div-comment-12899" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/223aa0281a3bb21d5e17e58713832be1?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://www.bingorage.com' rel='external nofollow' class='url'>BingoRage</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12899">
+			July 6, 2009 at 5:08 pm</a>		</div>
+
+		<p>The ultimate time travel paradox storyline.<br />
+A little weak on the character not recognising himselves/herselves; but necessary for the story to work, I suppose.<br />
+:Eric</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12902">
+				<div id="div-comment-12902" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/ee756aaa1c5f0a23ac482079e2fc30a5?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">Amy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12902">
+			July 7, 2009 at 5:41 am</a>		</div>
+
+		<p>I read this story recently, I have no clue where.  I love it.</p>
+<p>However, the part at the end when zombies were finally mentioned didn&#8217;t really make sense to me&#8230; can someone explain that?</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12903">
+				<div id="div-comment-12903" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/cc1d1b8b815d982177d66e7349920aee?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">MasterThief</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12903">
+			July 7, 2009 at 10:42 am</a>		</div>
+
+		<p>I had heard about this story but never read/heard it myself.</p>
+<p>Critics say this is one of Heinlein&#8217;s best, and I&#8217;d believe it.  Sure, some of the plot is thin on the science, but it&#8217;s so well-written, punchy, and laugh out loud funny (&#8220;Women’s Hospitality Order Refortifying &amp; Encouraging Spacemen&#8221;?) that I can&#8217;t not like it.</p>
+<p>@Amy &#8211; the main character, like the Ouroboros, is basically infinite &#8211; he begins and ends with himself.  So when he asked where all us zombies come from, it&#8217;s probably because we have such a limited span of existence.  Well, maybe not Heinlein.  Anymore. <img src="http://escapepod.org/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley" /></p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-12905">
+				<div id="div-comment-12905" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://www.radiodramarevival.com/escape-pods-200th-episode-heinleins-all-you-zombies/' rel='external nofollow' class='url'>Escape Pod&#8217;s 200th Episode &#8211; Heinlein&#8217;s All You Zombies</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12905">
+			July 7, 2009 at 7:19 pm</a>		</div>
+
+		<p>[...] to action from this week&#8217;s Escape Pod, I must encourage you to check out the show&#8217;s 200th episode, which features a story by Robert Heinlein. Heinlein is far and away my most beloved of science [...]</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12906">
+				<div id="div-comment-12906" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/ae2eb6b30b550f88cc2d4d27adbc6bba?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://jonbrazer.wordpress.com' rel='external nofollow' class='url'>Dale  McCoy, Jr.</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12906">
+			July 8, 2009 at 11:29 am</a>		</div>
+
+		<p>As instructed, I blogged about it, Steve. I hope it helps bring new listeners. <a href="http://jonbrazer.wordpress.com/2009/07/08/listen-to-escapepod-org/" rel="nofollow">http://jonbrazer.wordpress.com/2009/07/08/listen-to-escapepod-org/</a><br />
+Dale McCoy, Jr.<br />
+Jon Brazer Enterprises, President</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12909">
+				<div id="div-comment-12909" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/b369abd7a15a09ca68279cb57db2acc7?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://besucherke.wordpress.com' rel='external nofollow' class='url'>besucher</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12909">
+			July 8, 2009 at 4:34 pm</a>		</div>
+
+		<p>This story was a bit confusing, I could hardly get who&#8217;s with who. But the speech at the end of the story was great and moving. Keep it up, Mr. Eley!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12912">
+				<div id="div-comment-12912" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/7301630714497a05c9d019dd528dd762?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">BooHoo</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12912">
+			July 9, 2009 at 1:08 am</a>		</div>
+
+		<p>As much as it pleased me to be able to hear an oldie from the grokster, I could not get past the first two pronunciations of &#8216;temporal&#8217; in order to finish listening. <em>sigh</em> It&#8217;s so easy to look up a work you don&#8217;t know, why not take some time? Find a really old dictionary. Should be easy w/ all that time travel equipment at hand.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-12913">
+				<div id="div-comment-12913" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://sofanauts.com/podcast/the-sofanauts-no-12' rel='external nofollow' class='url'>The Sofanauts &raquo; The Sofanauts No 12</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12913">
+			July 10, 2009 at 5:48 am</a>		</div>
+
+		<p>[...] EP 200: All You Zombies [...]</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12917">
+				<div id="div-comment-12917" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://0.gravatar.com/avatar/2825d71fd4d161f7c2f74d34b8892c3c?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://facebook.com/kliman' rel='external nofollow' class='url'>Dave K.</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12917">
+			July 10, 2009 at 8:43 pm</a>		</div>
+
+		<p><em>spoilers</em></p>
+<p>I have always loved these kind of time travel stories&#8230; but i have to admit it is a little bit of a letdown when the loop finally closes completely up&#8230; then the only mystery remaining is&#8230; where did it start?</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12918">
+				<div id="div-comment-12918" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/3b7f3e1ac2c708d9e77784892748bc08?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://n/a' rel='external nofollow' class='url'>Jacob</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12918">
+			July 10, 2009 at 10:06 pm</a>		</div>
+
+		<p>Thanks Steve,<br />
+Now we can all say we’ve read Heinlein…though recently at the insistence of a work collauge I’ve broken down and finished reading Have Space Suite Will Travel, and I can now for curtain say I’m an instant fan…</p>
+<p>I chose this story All You Zombies as my story to share…I’ll report back if he’s brain leaks out he’s ear as I feel mine had at the completion of this story.</p>
+<p>Sincerely, The last fan of The Geek Dad Intro.<br />
+Jacob From Texas</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12934">
+				<div id="div-comment-12934" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/dd0d876361d3d04cedf0b185081177a0?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn"><a href='http://paulg57.blogspot.com' rel='external nofollow' class='url'>Paul</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12934">
+			July 13, 2009 at 10:49 am</a>		</div>
+
+		<p>Typical Heinlein isn&#8217;t it, while based upon a specific time and worldview, it also knocks the socks off convention and gets us to consider the characters and makes you scratch your head.</p>
+<p>a great choice.  only thing I can add is:  more Heinlein!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12938">
+				<div id="div-comment-12938" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/d6d5fb550c7bcd0b5236a19bb0c7f384?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">JimO</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12938">
+			July 13, 2009 at 3:49 pm</a>		</div>
+
+		<p>Feel silly for not reading this story before and now I know where the Red Dwarf episode &#8220;Ouroboros&#8221; comes from.  I thought the end passage was well written.<br />
+Sometime I forget that Heinlein was a very good writer before his id/libido raged later in life.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12961">
+				<div id="div-comment-12961" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/de74f7b95c038d84c0f35a4fc059f416?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">rubber_wonder_boy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12961">
+			July 15, 2009 at 4:18 pm</a>		</div>
+
+		<p>I&#8217;m interested in knowing, what&#8217;s &#8220;Old Underwear&#8221;? Would be like absinthe? Or, Jagermiester?</p>
+<p>Or something completely different? Raunchy, sweet, &amp; salty? Onion rings dipped in ketchup comes to mind. But, in liquid-form mixed with alcohol.</p>
+<p>None the less, it would be the most suitable beverage to toast with.</p>
+<p>As shots.</p>
+<p>Cheers!</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12971">
+				<div id="div-comment-12971" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt='' src='http://1.gravatar.com/avatar/d1f8f781ef884d8fd6611ae134887242?s=60&amp;d=identicon&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' />			<cite class="fn">ryan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-12971">
+			July 18, 2009 at 10:21 pm</a>		</div>
+
+		<p>We did a story like this in Philosophy to illustrate the paradox of time travel.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-13298">
+				<div id="div-comment-13298" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href='http://blogs.techrepublic.com.com/geekend/?p=4284' rel='external nofollow' class='url'>Escape with three geeky podcasts | Geekend | TechRepublic.com</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://escapepod.org/2009/07/02/ep-200-all-you-zombies/comment-page-1/#comment-13298">
+			February 16, 2010 at 9:01 pm</a>		</div>
+
+		<p>[...] with 21st century stories sprinkled with classics. For instance, you&#8217;ll find Heinlein&#8217;s All You Zombies and Asimov&#8217;s Nightfall, as well as Katherine Sparrow&#8217;s Pirate [...]</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+	</ol>
+
+	<div class="comments-navigation clearfix">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+</div>
+
+ 
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div id="contentright">
+
+			<div id="sidebar" class="clearfix">
+				<ul> 
+<li id="text-3" class="widget widget_text">			<div class="textwidget"><img src="http://www.escapepod.org/wp-content/themes/wp-sublime_basic/images/300_dyptich.png">
+</div>
+		</li>
+<li id="text-4" class="widget widget_text"><h3 class="widgettitle">Support The Pod!</h3>			<div class="textwidget"><center><table>
+<tr>
+<td><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="9N2VLZ5X7PC2J">
+<input type="image" src="http://www.escapepod.org/wp-content/themes/wp-sublime_basic/images/125_paypal_once.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+</form>
+</form>
+<!--
+<i>(Donations are disabled for December.  We urge you to give to the <a href="http://www.charitynavigator.org/">charity of your choice</a> instead.)<br></i>
+--></td>
+<td>                                                                     
+                                                                     
+                                                                     
+                                             
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="EWNHXCGDANKK4">
+<table>
+<tr><td><input type="hidden" name="on0" value="Subscription Levels">Subscription Levels</td></tr><tr><td><select name="os0">
+	<option value="$2.00 Per Month">$2.00  USD Per Month</option>
+	<option value="$5.00 Per Month">$5.00  USD Per Month</option>
+	<option value="$10.00 Per Month">$10.00  USD Per Month</option>
+	<option value="$15.00 Per Month">$15.00  USD Per Month</option>
+	<option value="$20,00 Per Month">$20.00  USD Per Month</option>
+	<option value="$60.00 Per Year">$60.00 USD Per Year</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form></td>
+</tr>
+</table>
+<!--<P>
+<a href="http://www.audiblepodcast.com/escapepod"><img src="http://asset-server.libsyn.com/show/k-4af4f6dfbff96e93/assets/300x250_audible.jpg"></a></center>-->
+</div>
+		</li>
+<li id="text-5" class="widget widget_text"><h3 class="widgettitle">Subscribe</h3>			<div class="textwidget"><center><FONT size="small"><i>Our main feed:</i></font><br>
+<a href="http://feeds.escapeartists.net/EscapePod"><img src="http://murverse.com/wp-content/uploads/2008/02/button_rss_podcast.png" alt="RSS2"></a></p>
+<p><font size="small"><i>Or pick your app:</i></font>
+<BR><a href="http://www.podcastready.com/channel.php?action=subscribe&feedUrl=http%3A%2F%2Fwww.escapepod.org%2Fpodcast.xml"><img src="http://www.podcastready.com/images/podcastready_button.gif" border="0" width="80" height="15"> </a>
+<br><a href="itpc://www.escapepod.org/podcast.xml"><img src="http://murverse.com/wp-content/uploads/2008/02/button_itunes.png"></a>
+<br><a href="http://www.bloglines.com/sub/http://www.escapepod.org/podcast.xml"><img src="http://www.escapepod.org/wp-content/images/FC_Bloglines.jpg"></a>
+<br><a href="http://ipodder.sourceforge.net/oneclick/subscribe.rssaudio?url=http://www.escapepod.org/podcast.xml"><img src="http://www.escapepod.org/wp-content/images/FC_Juice.jpg"></a><br>
+<P><i>Or by e-mail:</i></P>
+<form method="post" action="http://www.feedblitz.com/feedblitz.exe?BurnUser">    <input name="email" maxlength="255" type="text" width="15" value="(Your e-mail address)"><br>    <input name="uri" type="hidden" value="EscapePod"> <input type="submit" value="E-mail Updates"></form></center></div>
+		</li>
+<li id="text-7" class="widget widget_text"><h3 class="widgettitle">Our Monthly Needs</h3>			<div class="textwidget"><script type="text/javascript">
+var wHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + wHost + "www.school-fundraisers.com/widget.php?id=24017' type='text/javascript'%3E%3C/script%3E"));
+</script></div>
+		</li>
+<li id="text-6" class="widget widget_text"><h3 class="widgettitle">Other Escape Artists Sites</h3>			<div class="textwidget"><center><a href="http://www.podcastle.org"><img hspace=3 src="http://escapepod.org/wp-content/themes/neptune/images/podcastle.png"></a><a href="http://www.pseudopod.org"><img hspace=3 src="http://escapepod.org/wp-content/themes/neptune/images/pseudopod.png"></a>
+<!--<P><a href="http://www.poddisc.com"><img height=125 hspace=3 src="http://www.escapepod.org/wp-content/themes/neptune/images/poddisc_button.png"></a>--></center></div>
+		</li>
+<li id="linkcat-54" class="widget widget_links"><h3 class="widgettitle">Escape Artists</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://forum.escapeartists.net/index.php" target="_blank">Forums</a></li>
+<li><a href="http://www.poddisc.com/" target="_blank">Pod Disc</a></li>
+
+	</ul>
+</li>
+
+<li id="linkcat-52" class="widget widget_links"><h3 class="widgettitle">Free Audio Fiction</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://clarkesworldmagazine.com/" target="_blank">Clarkesworld</a></li>
+<li><a href="http://www.drabblecast.org/" target="_blank">Drabblecast</a></li>
+<li><a href="http://www.lightspeedmagazine.com/" target="_blank">Lightspeed Magazine</a></li>
+<li><a href="http://www.podcastle.org" target="_blank">Podcastle</a></li>
+<li><a href="http://www.podiobooks.com/" target="_blank">Podiobooks</a></li>
+<li><a href="http://www.pseudopod.org" target="_blank">Pseudopod</a></li>
+<li><a href="http://www.starshipsofa.com/" target="_blank">Starship Sofa</a></li>
+
+	</ul>
+</li>
+
+<li id="categories-2" class="widget widget_categories"><h3 class="widgettitle">Categories</h3><select name='cat' id='cat' class='postform' >
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="6">10 and Up&nbsp;&nbsp;(260)</option>
+	<option class="level-0" value="189">13 and Up&nbsp;&nbsp;(88)</option>
+	<option class="level-0" value="7">17 and Up&nbsp;&nbsp;(154)</option>
+	<option class="level-0" value="177">Best-Of&nbsp;&nbsp;(12)</option>
+	<option class="level-0" value="184">Blog&nbsp;&nbsp;(240)</option>
+	<option class="level-0" value="13">Bonus&nbsp;&nbsp;(10)</option>
+	<option class="level-0" value="171">Books&nbsp;&nbsp;(88)</option>
+	<option class="level-0" value="168">Comics&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="174">E-pub&nbsp;&nbsp;(16)</option>
+	<option class="level-0" value="655">EP Original&nbsp;&nbsp;(9)</option>
+	<option class="level-0" value="8">Erotica &#8211; NOT FOR KIDS&nbsp;&nbsp;(9)</option>
+	<option class="level-0" value="44">Featured&nbsp;&nbsp;(19)</option>
+	<option class="level-0" value="14">Flash&nbsp;&nbsp;(57)</option>
+	<option class="level-0" value="175">For Kids&nbsp;&nbsp;(49)</option>
+	<option class="level-0" value="211">Housekeeping&nbsp;&nbsp;(9)</option>
+	<option class="level-0" value="15">Hugo Awards&nbsp;&nbsp;(32)</option>
+	<option class="level-0" value="16">Interviews&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="176">OK for Kids&nbsp;&nbsp;(235)</option>
+	<option class="level-0" value="3">Podcasts&nbsp;&nbsp;(564)</option>
+	<option class="level-0" value="4">Rambling&nbsp;&nbsp;(52)</option>
+	<option class="level-0" value="157">Reading&nbsp;&nbsp;(15)</option>
+	<option class="level-0" value="9">Reviews&nbsp;&nbsp;(159)</option>
+	<option class="level-0" value="10">SF/F News&nbsp;&nbsp;(31)</option>
+	<option class="level-0" value="11">Shoutouts&nbsp;&nbsp;(22)</option>
+	<option class="level-0" value="17">Site News&nbsp;&nbsp;(43)</option>
+	<option class="level-0" value="199">TheSoundproofEscapePod&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(35)</option>
+</select>
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://escapepod.org/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</li>
+<li id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="widgettitle">Tags</h3><div class="tagcloud"><a href='http://escapepod.org/tag/25-days-of-tng/' class='tag-link-931' title='25 topics' style='font-size: 15.466666666667pt;'>25 days of tng</a>
+<a href='http://escapepod.org/tag/alasdair-stuart/' class='tag-link-455' title='14 topics' style='font-size: 12.4pt;'>Alasdair Stuart</a>
+<a href='http://escapepod.org/tag/aliens/' class='tag-link-23' title='26 topics' style='font-size: 15.733333333333pt;'>aliens</a>
+<a href='http://escapepod.org/tag/alternate-history/' class='tag-link-90' title='6 topics' style='font-size: 8pt;'>alternate history</a>
+<a href='http://escapepod.org/tag/book-review/' class='tag-link-179' title='10 topics' style='font-size: 10.533333333333pt;'>book review</a>
+<a href='http://escapepod.org/tag/buffy-the-vampire-slayer/' class='tag-link-638' title='7 topics' style='font-size: 8.6666666666667pt;'>buffy the vampire slayer</a>
+<a href='http://escapepod.org/tag/christiana-ellis/' class='tag-link-137' title='7 topics' style='font-size: 8.6666666666667pt;'>Christiana Ellis</a>
+<a href='http://escapepod.org/tag/dani-cutler/' class='tag-link-75' title='7 topics' style='font-size: 8.6666666666667pt;'>Dani Cutler</a>
+<a href='http://escapepod.org/tag/dave-thompson/' class='tag-link-127' title='8 topics' style='font-size: 9.3333333333333pt;'>Dave Thompson</a>
+<a href='http://escapepod.org/tag/fantasy/' class='tag-link-340' title='11 topics' style='font-size: 11.066666666667pt;'>fantasy</a>
+<a href='http://escapepod.org/tag/featured-2/' class='tag-link-45' title='28 topics' style='font-size: 16.133333333333pt;'>featured</a>
+<a href='http://escapepod.org/tag/fiction/' class='tag-link-185' title='42 topics' style='font-size: 18.4pt;'>fiction</a>
+<a href='http://escapepod.org/tag/free-fiction/' class='tag-link-150' title='63 topics' style='font-size: 20.8pt;'>free fiction</a>
+<a href='http://escapepod.org/tag/harry-potter/' class='tag-link-458' title='12 topics' style='font-size: 11.466666666667pt;'>harry potter</a>
+<a href='http://escapepod.org/tag/hugo/' class='tag-link-15' title='16 topics' style='font-size: 13.066666666667pt;'>Hugo Awards</a>
+<a href='http://escapepod.org/tag/hugo-winner/' class='tag-link-738' title='10 topics' style='font-size: 10.533333333333pt;'>Hugo Winner</a>
+<a href='http://escapepod.org/tag/jeffrey-derego/' class='tag-link-138' title='12 topics' style='font-size: 11.466666666667pt;'>Jeffrey DeRego</a>
+<a href='http://escapepod.org/tag/josh-roseman/' class='tag-link-528' title='7 topics' style='font-size: 8.6666666666667pt;'>Josh Roseman</a>
+<a href='http://escapepod.org/tag/kate-baker/' class='tag-link-58' title='6 topics' style='font-size: 8pt;'>Kate Baker</a>
+<a href='http://escapepod.org/tag/kij-johnson/' class='tag-link-48' title='6 topics' style='font-size: 8pt;'>Kij Johnson</a>
+<a href='http://escapepod.org/tag/love/' class='tag-link-27' title='12 topics' style='font-size: 11.466666666667pt;'>love</a>
+<a href='http://escapepod.org/tag/mat-weller/' class='tag-link-270' title='19 topics' style='font-size: 14pt;'>Mat Weller</a>
+<a href='http://escapepod.org/tag/mike-resnick/' class='tag-link-32' title='16 topics' style='font-size: 13.066666666667pt;'>mike resnick</a>
+<a href='http://escapepod.org/tag/mur-lafferty/' class='tag-link-49' title='39 topics' style='font-size: 18pt;'>mur lafferty</a>
+<a href='http://escapepod.org/tag/norm-sherman/' class='tag-link-354' title='13 topics' style='font-size: 12pt;'>Norm Sherman</a>
+<a href='http://escapepod.org/tag/podcast/' class='tag-link-569' title='59 topics' style='font-size: 20.4pt;'>podcast</a>
+<a href='http://escapepod.org/tag/post-apocalyptic/' class='tag-link-212' title='12 topics' style='font-size: 11.466666666667pt;'>post-apocalyptic</a>
+<a href='http://escapepod.org/tag/rachel-swirsky/' class='tag-link-85' title='6 topics' style='font-size: 8pt;'>rachel swirsky</a>
+<a href='http://escapepod.org/tag/robot/' class='tag-link-1294' title='7 topics' style='font-size: 8.6666666666667pt;'>robot</a>
+<a href='http://escapepod.org/tag/science/' class='tag-link-164' title='62 topics' style='font-size: 20.666666666667pt;'>science</a>
+<a href='http://escapepod.org/tag/science-fiction/' class='tag-link-391' title='78 topics' style='font-size: 22pt;'>science fiction</a>
+<a href='http://escapepod.org/tag/science-future/' class='tag-link-394' title='63 topics' style='font-size: 20.8pt;'>Science Future</a>
+<a href='http://escapepod.org/tag/sci-fi/' class='tag-link-1107' title='78 topics' style='font-size: 22pt;'>sci fi</a>
+<a href='http://escapepod.org/tag/sex/' class='tag-link-39' title='8 topics' style='font-size: 9.3333333333333pt;'>sex</a>
+<a href='http://escapepod.org/tag/space/' class='tag-link-30' title='31 topics' style='font-size: 16.8pt;'>space</a>
+<a href='http://escapepod.org/tag/star-trek/' class='tag-link-224' title='40 topics' style='font-size: 18.133333333333pt;'>star trek</a>
+<a href='http://escapepod.org/tag/steampunk/' class='tag-link-328' title='7 topics' style='font-size: 8.6666666666667pt;'>steampunk</a>
+<a href='http://escapepod.org/tag/stephen-eley/' class='tag-link-66' title='33 topics' style='font-size: 17.066666666667pt;'>stephen eley</a>
+<a href='http://escapepod.org/tag/superheroes/' class='tag-link-234' title='8 topics' style='font-size: 9.3333333333333pt;'>superheroes</a>
+<a href='http://escapepod.org/tag/the-next-generation/' class='tag-link-932' title='25 topics' style='font-size: 15.466666666667pt;'>the next generation</a>
+<a href='http://escapepod.org/tag/time-travel/' class='tag-link-322' title='9 topics' style='font-size: 10pt;'>time travel</a>
+<a href='http://escapepod.org/tag/tim-pratt/' class='tag-link-88' title='12 topics' style='font-size: 11.466666666667pt;'>Tim Pratt</a>
+<a href='http://escapepod.org/tag/union-dues/' class='tag-link-140' title='12 topics' style='font-size: 11.466666666667pt;'>union dues</a>
+<a href='http://escapepod.org/tag/writing/' class='tag-link-183' title='6 topics' style='font-size: 8pt;'>writing</a>
+<a href='http://escapepod.org/tag/ya/' class='tag-link-242' title='6 topics' style='font-size: 8pt;'>ya</a></div>
+</li>
+<li id="archives-3" class="widget widget_archive"><h3 class="widgettitle">Archives</h3>		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='http://escapepod.org/2014/09/'> September 2014 &nbsp;(3)</option>
+	<option value='http://escapepod.org/2014/08/'> August 2014 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2014/07/'> July 2014 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2014/06/'> June 2014 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2014/05/'> May 2014 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2014/04/'> April 2014 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2014/03/'> March 2014 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2014/02/'> February 2014 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2014/01/'> January 2014 &nbsp;(9)</option>
+	<option value='http://escapepod.org/2013/12/'> December 2013 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2013/11/'> November 2013 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2013/10/'> October 2013 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2013/09/'> September 2013 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2013/08/'> August 2013 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2013/07/'> July 2013 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2013/06/'> June 2013 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2013/05/'> May 2013 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2013/04/'> April 2013 &nbsp;(9)</option>
+	<option value='http://escapepod.org/2013/03/'> March 2013 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2013/02/'> February 2013 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2013/01/'> January 2013 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2012/12/'> December 2012 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2012/11/'> November 2012 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2012/10/'> October 2012 &nbsp;(28)</option>
+	<option value='http://escapepod.org/2012/09/'> September 2012 &nbsp;(12)</option>
+	<option value='http://escapepod.org/2012/08/'> August 2012 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2012/07/'> July 2012 &nbsp;(12)</option>
+	<option value='http://escapepod.org/2012/06/'> June 2012 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2012/05/'> May 2012 &nbsp;(11)</option>
+	<option value='http://escapepod.org/2012/04/'> April 2012 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2012/03/'> March 2012 &nbsp;(14)</option>
+	<option value='http://escapepod.org/2012/02/'> February 2012 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2012/01/'> January 2012 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2011/12/'> December 2011 &nbsp;(12)</option>
+	<option value='http://escapepod.org/2011/11/'> November 2011 &nbsp;(11)</option>
+	<option value='http://escapepod.org/2011/10/'> October 2011 &nbsp;(14)</option>
+	<option value='http://escapepod.org/2011/09/'> September 2011 &nbsp;(13)</option>
+	<option value='http://escapepod.org/2011/08/'> August 2011 &nbsp;(14)</option>
+	<option value='http://escapepod.org/2011/07/'> July 2011 &nbsp;(12)</option>
+	<option value='http://escapepod.org/2011/06/'> June 2011 &nbsp;(16)</option>
+	<option value='http://escapepod.org/2011/05/'> May 2011 &nbsp;(11)</option>
+	<option value='http://escapepod.org/2011/04/'> April 2011 &nbsp;(12)</option>
+	<option value='http://escapepod.org/2011/03/'> March 2011 &nbsp;(17)</option>
+	<option value='http://escapepod.org/2011/02/'> February 2011 &nbsp;(12)</option>
+	<option value='http://escapepod.org/2011/01/'> January 2011 &nbsp;(15)</option>
+	<option value='http://escapepod.org/2010/12/'> December 2010 &nbsp;(17)</option>
+	<option value='http://escapepod.org/2010/11/'> November 2010 &nbsp;(19)</option>
+	<option value='http://escapepod.org/2010/10/'> October 2010 &nbsp;(15)</option>
+	<option value='http://escapepod.org/2010/09/'> September 2010 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2010/08/'> August 2010 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2010/07/'> July 2010 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2010/06/'> June 2010 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2010/05/'> May 2010 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2010/04/'> April 2010 &nbsp;(1)</option>
+	<option value='http://escapepod.org/2010/02/'> February 2010 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2010/01/'> January 2010 &nbsp;(3)</option>
+	<option value='http://escapepod.org/2009/12/'> December 2009 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2009/11/'> November 2009 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2009/10/'> October 2009 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2009/09/'> September 2009 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2009/08/'> August 2009 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2009/07/'> July 2009 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2009/06/'> June 2009 &nbsp;(9)</option>
+	<option value='http://escapepod.org/2009/05/'> May 2009 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2009/04/'> April 2009 &nbsp;(9)</option>
+	<option value='http://escapepod.org/2009/03/'> March 2009 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2009/02/'> February 2009 &nbsp;(2)</option>
+	<option value='http://escapepod.org/2009/01/'> January 2009 &nbsp;(2)</option>
+	<option value='http://escapepod.org/2008/12/'> December 2008 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2008/11/'> November 2008 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2008/10/'> October 2008 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2008/09/'> September 2008 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2008/08/'> August 2008 &nbsp;(9)</option>
+	<option value='http://escapepod.org/2008/07/'> July 2008 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2008/06/'> June 2008 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2008/05/'> May 2008 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2008/04/'> April 2008 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2008/03/'> March 2008 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2008/02/'> February 2008 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2008/01/'> January 2008 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2007/12/'> December 2007 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2007/11/'> November 2007 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2007/10/'> October 2007 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2007/09/'> September 2007 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2007/08/'> August 2007 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2007/07/'> July 2007 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2007/06/'> June 2007 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2007/05/'> May 2007 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2007/04/'> April 2007 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2007/03/'> March 2007 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2007/02/'> February 2007 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2007/01/'> January 2007 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2006/12/'> December 2006 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2006/11/'> November 2006 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2006/10/'> October 2006 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2006/09/'> September 2006 &nbsp;(4)</option>
+	<option value='http://escapepod.org/2006/08/'> August 2006 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2006/07/'> July 2006 &nbsp;(6)</option>
+	<option value='http://escapepod.org/2006/06/'> June 2006 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2006/05/'> May 2006 &nbsp;(14)</option>
+	<option value='http://escapepod.org/2006/04/'> April 2006 &nbsp;(5)</option>
+	<option value='http://escapepod.org/2006/03/'> March 2006 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2006/02/'> February 2006 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2006/01/'> January 2006 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2005/12/'> December 2005 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2005/11/'> November 2005 &nbsp;(7)</option>
+	<option value='http://escapepod.org/2005/10/'> October 2005 &nbsp;(8)</option>
+	<option value='http://escapepod.org/2005/09/'> September 2005 &nbsp;(11)</option>
+	<option value='http://escapepod.org/2005/08/'> August 2005 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2005/07/'> July 2005 &nbsp;(10)</option>
+	<option value='http://escapepod.org/2005/06/'> June 2005 &nbsp;(14)</option>
+	<option value='http://escapepod.org/2005/05/'> May 2005 &nbsp;(8)</option>
+		</select>
+</li>
+				</ul>
+			</div>
+
+			<div id="sidebar-bottom-left">
+				<ul>
+	
+				</ul>
+			</div>
+
+			<div id="sidebar-bottom-right">
+				<ul>
+	
+				</ul>
+			</div>
+
+		</div>
+
+	</div>
+
+	
+	<div id="footer" class="clearfix">
+		&copy; Copyright <a href="http://escapepod.org">Escape Pod</a> 2014. All rights reserved.<br />
+		<a href="http://wordpress.org/">WordPress</a> | <a href="http://www.solostream.com">WordPress Themes</a> | <a href="http://validator.w3.org/check?uri=referer">XHTML</a>
+	</div>
+
+</div>
+
+<div id="wrap-bottom"></div>
+
+
+<!-- Simple Social Buttons plugin -->
+<script type="text/javascript">
+//<![CDATA[
+// google plus
+window.___gcfg = {lang: 'en'};
+(function() {
+   var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+   po.src = 'https://apis.google.com/js/plusone.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+// facebook 
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+// twitter 
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+// ]]>
+</script>
+<!-- /End of Simple Social Buttons -->
+
+<div id="podPress_footer">Podcast powered by <a href="http://wordpress.org/extend/plugins/podpress/" title="podPress, a plugin for podcasting with WordPress">podPress v8.8.10.17</a></div><script type='text/javascript' src='http://escapepod.org/wp-includes/js/comment-reply.min.js'></script>
+
+</body>
+
+</html>
+
