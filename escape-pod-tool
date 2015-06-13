@@ -431,6 +431,10 @@ sub parseHtml($$$$){
     $title =~ s/\s*$//;
     $title =~ s/&#039;/'/g;
     $title =~ s/&#8217;/'/g;
+    $title =~ s/&#8211;/-/g;
+    $title =~ s/&#8230;/.../g;
+    $title =~ s/&#8220;/"/g;
+    $title =~ s/&#8221;/"/g;
     $title =~ s/&#8217;/'/g;
     $title =~ s/&amp;/&/g;
     $title =~ s/’/'/g;
