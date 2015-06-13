@@ -77,6 +77,7 @@ sub parseHtml($$$$);
 sub urlToFileName($);
 sub fileNameToUrl($);
 sub htmlCacheFile($);
+sub deletedHtmlCacheFile($);
 sub getCachedUrls();
 sub ensureHtmlCache($);
 sub attemptPutHtmlCache($);
@@ -625,6 +626,20 @@ sub htmlCacheFile($){
 
   return "$htmlCacheDir/$name";
 }
+sub deletedHtmlCacheFile($){
+  my $url = shift;
+  my $name = urlToFileName $url;
+
+  my $deletedHtmlCacheDir = "$$config{infoDir}/deleted-html-cache";
+  if(not -d $deletedHtmlCacheDir){
+    return undef;
+  }
+  my $deletedHtmlCacheFile = "$deletedHtmlCacheDir/$name";
+  if(not -f $deletedHtmlCacheFile){
+    return undef;
+  }
+  return $deletedHtmlCacheFile;
+}
 
 sub getCachedUrls(){
   my $htmlCacheDir = "$$config{cacheDir}/html-cache";
@@ -645,6 +660,12 @@ sub ensureHtmlCache($){
 
   my $attempts;
   return 1 if checkHtmlFile $cacheFile;
+
+  my $deletedHtmlCacheFile = deletedHtmlCacheFile $url;
+  if(defined $deletedHtmlCacheFile){
+    run "cp", "-ar", $deletedHtmlCacheFile, $cacheFile;
+    return 1 if checkHtmlFile $cacheFile;
+  }
 
   $attempts = 10;
   while($attempts > 0 and not checkHtmlFile $cacheFile){
