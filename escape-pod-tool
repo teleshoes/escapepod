@@ -768,6 +768,13 @@ sub browserLoadArticle($){
 
 sub ensureArticleUrlCache(){
   my $cache = readAttCache 'article-url-cache';
+  my $deletedCacheFile = "$$config{infoDir}/deleted-article-url-cache";
+  if(-f $deletedCacheFile){
+    my $deletedCache = readCacheFile $deletedCacheFile;
+    for my $key(keys %$deletedCache){
+      $$cache{$key} = $$deletedCache{$key};
+    }
+  }
   my @missing = getMissingArticleUrls $cache;
   if(keys %$cache == 0 or @missing > 0){
     $cache = getArticleUrls();
