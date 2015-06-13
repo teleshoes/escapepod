@@ -98,6 +98,7 @@ sub getUrlsFromArchiveHtml($);
 sub getArticleUrls();
 sub getUrlOverrides($);
 sub readAttCache($);
+sub readCacheFile($);
 sub writeAttCache($$);
 sub extraInfo();
 sub personLinks();
@@ -949,6 +950,10 @@ sub getUrlOverrides($){
 sub readAttCache($){
   my $name = shift;
   my $cacheFile = "$$config{cacheDir}/$name";
+  return readCacheFile $cacheFile;
+}
+sub readCacheFile($){
+  my $cacheFile = shift;
   my @lines = `cat $cacheFile 2>/dev/null`;
   my $cache = {};
   for my $line(@lines){
