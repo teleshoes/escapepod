@@ -339,8 +339,6 @@ sub main(@){
           . " || $forum"
           . "\n"
           ;
-        $fmt =~ s/&#8217;/'/g;
-        $fmt =~ s/&amp;/&/g;
         print $fmt;
         print OUT $fmt;
       }else{
@@ -432,6 +430,7 @@ sub parseHtml($$$$){
     $title =~ s/^\s*//;
     $title =~ s/\s*$//;
     $title =~ s/&#039;/'/g;
+    $title =~ s/&#8217;/'/g;
     $title =~ s/&#8217;/'/g;
     $title =~ s/&amp;/&/g;
     $title =~ s/’/'/g;
