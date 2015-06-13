@@ -277,6 +277,8 @@ sub main(@){
 
   if($cmd eq '--csv'){
     for my $epNum(sort keys %$epInfo){
+      my $articleUrl = $$articleUrls{$epNum};
+      ensureHtmlCache $articleUrl;
       my $info = &{$$epInfo{$epNum}}();
       print csv($info) . "\n";
     }
