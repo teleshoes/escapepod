@@ -101,6 +101,7 @@ sub getUrlOverrides($);
 sub readAttCache($);
 sub readCacheFile($);
 sub writeAttCache($$);
+sub getAttCacheMtime($);
 sub extraInfo();
 sub personLinks();
 sub fmtPersonLink($$);
@@ -576,12 +577,19 @@ sub parseHtml($$$$){
     }
   }
   if(not defined $$forumCache{$epNum}){
-    print STDERR "updating forum cache\n";
-    my $epArticles = crawlForum;
-    for my $ep(sort keys %$epArticles){
-      $$forumCache{$ep} = $$epArticles{$ep};
+    my $forumCacheMtime = getAttCacheMtime('forum-cache');
+    $forumCacheMtime = 0 if not defined $forumCacheMtime;
+    my $diff = time - $forumCacheMtime;
+    if($diff >= 0 and $diff < 24*60*60){
+      print STDERR "forum cache is less than a day old, not updating\n";
+    }else{
+      print STDERR "updating forum cache\n";
+      my $epArticles = crawlForum;
+      for my $ep(sort keys %$epArticles){
+        $$forumCache{$ep} = $$epArticles{$ep};
+      }
+      writeAttCache 'forum-cache', $forumCache;
     }
-    writeAttCache 'forum-cache', $forumCache;
   }
   if(defined $$forumCache{$epNum}){
     $$info{forum} = $$forumCache{$epNum};
@@ -1007,6 +1015,17 @@ sub writeAttCache($$){
     print FH sprintf "%03d%s %s\n", $1, $2, $$cache{$epNum};
   }
   close FH;
+}
+
+sub getAttCacheMtime($){
+  my ($name) = @_;
+  my $cacheFile = "$$config{cacheDir}/$name";
+  if(-f $cacheFile){
+    my @stat = stat $cacheFile;
+    return $stat[9];
+  }else{
+    return undef;
+  }
 }
 
 sub extraInfo(){
