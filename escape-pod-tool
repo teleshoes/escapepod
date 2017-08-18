@@ -278,6 +278,10 @@ sub main(@){
 
   my %okNums = map {$_ => 1} @epNums;
 
+  my $downloadOnly = 0;
+  if($cmd eq "--download-only"){
+    $downloadOnly = 1;
+  }
 
   my $epInfo = {};
   my $extraInfo = extraInfo();
@@ -285,8 +289,8 @@ sub main(@){
     my $url = $$articleUrls{$epNum};
     die "Missing article url for $epNum\n" if not defined $url;
     my $ex = $$extraInfo{$epNum};
-    my $isLast = $epNum eq $maxEpNum ? 1 : 0;
-    $$epInfo{$epNum} = sub{parseHtml $epNum, $url, $ex, $isLast};
+    my $allowMissing = $downloadOnly;
+    $$epInfo{$epNum} = sub{parseHtml $epNum, $url, $ex, $allowMissing};
   }
 
   my $exitCode = 0;
@@ -405,7 +409,7 @@ sub main(@){
 }
 
 sub parseHtml($$$$){
-  my ($epNum, $url, $ex, $isLast) = @_;
+  my ($epNum, $url, $ex, $allowMissing) = @_;
   $url =~ s/^https:/http:/;
 
   my $html = readHtmlCache $url;
@@ -613,7 +617,7 @@ sub parseHtml($$$$){
   for my $att(@atts){
     if(not defined $$info{$att}){
       print STDERR "Missing '$att' for $epNum\n";
-      if($isLast){
+      if($allowMissing){
         $$info{$att} = "?";
       }else{
         exit 1;
