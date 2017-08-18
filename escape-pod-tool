@@ -1064,13 +1064,8 @@ sub personLinks(){
   for my $line(`cat $file 2>/dev/null`){
     $line =~ s/#.*//;
     next if $line =~ /^\s*$/;
-    if($line =~ /^(.*)=>(.*)$/){
+    if($line =~ /^\s*(\S.*\S)\s*=>\s*(\S.*\S)$/){
       my ($person, $link) = ($1, $2);
-      chomp $link;
-      $person =~ s/^\s*//;
-      $person =~ s/\s*$//;
-      $link =~ s/^\s*//;
-      $link =~ s/\s*$//;
       $$personLinks{$person} = $link;
     }else{
       die "malformed person-links line: $line";
@@ -1106,6 +1101,8 @@ sub fmtPersonLink($$){
     my $fmt;
     if(not defined $link){
       $fmt = "[[$p]]";
+    }elsif($link eq "NONE"){
+      $fmt = "$p";
     }elsif($link =~ /^[ a-zA-Z0-9_\-]+$/){
       $fmt = "[[$p ($link)|$p]]";
     }else{
