@@ -488,6 +488,8 @@ sub parseHtml($$$$){
   if(not $isFlash){
     if(defined $$ex{author}){
       $$info{author} = $$ex{author};
+    }elsif($htmlNoMeta =~ /(?-i)A(?i)uthor$ws*:$ws*$span?$ws*(?:<a [^>]*>)?$span?$b?([^<(]+)/i){
+      $$info{author} = $1;
     }elsif($htmlNoMeta =~ />by$ws*:?\s*$span?$b?(?:<a [^>]*>)?$b?([^<(]+)/i){
       $$info{author} = $1;
     }
@@ -515,6 +517,8 @@ sub parseHtml($$$$){
   if(not $isFlash){
     if(defined $$ex{reader}){
       $$info{reader} = $$ex{reader};
+    }elsif($htmlNoMeta =~ /narrator$ws*:$ws*$span?$ws*(?:<a [^>]*>)?$span?$b?([^<(]+)/i){
+      $$info{reader} = $1;
     }elsif($htmlNoMeta =~ /$readBy$span?$b?(?:<a [^>]*>)?$b?([^<(]+)/i){
       $$info{reader} = $1;
     }elsif($htmlNoMeta =~ /your\s*reader[^<]*(?:<[^>]+>\s*)+([^<]+)</i){
