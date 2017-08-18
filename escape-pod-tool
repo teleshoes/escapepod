@@ -615,7 +615,7 @@ sub parseHtml($$$$){
   }
 
   for my $att(@atts){
-    if(not defined $$info{$att}){
+    if(not defined $$info{$att} or $$info{$att} =~ /^\s*$/){
       print STDERR "Missing '$att' for $epNum\n";
       if($allowMissing){
         $$info{$att} = "?";
