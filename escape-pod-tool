@@ -119,6 +119,7 @@ sub getCurrentCalMonth();
 sub getAllCalMonthsSince($);
 sub arrEquals($$);
 sub uniqArr(@);
+sub globOne($);
 sub run(@);
 sub runMaybeQuiet($@);
 sub tryrun(@);
@@ -421,8 +422,17 @@ sub parseHtml($$$$){
 
   my @atts = qw(title author reader rating duration forum);
 
-  my $mp3 = `ls "$$config{mp3Dir}"/$epNum*.mp3 2>/dev/null`;
-  chomp $mp3;
+  my $mp3Url = getMP3Url $url;
+  my $oldMP3FileName = $1 if $mp3Url =~ /([^\/]*\.mp3)$/;
+
+  my $oldMP3File = "$$config{mp3Dir}/$oldMP3FileName";
+  $oldMP3File = undef if not -f $oldMP3File;
+
+  my $newMP3File = globOne "$$config{mp3Dir}/$epNum\\ *.mp3";
+
+  my $mp3File;
+  $mp3File = $oldMP3File if defined $oldMP3File;
+  $mp3File = $newMP3File if defined $newMP3File;
 
   my $b = "(?:<\\/?\\s*(?:b|strong)[^>]*>)";
   my $span = "(?:<\\/?\\s*span[^>]*>)";
@@ -574,9 +584,10 @@ sub parseHtml($$$$){
   my $durCache = readAttCache 'duration-cache';
   if(defined $$durCache{$epNum}){
     $$info{duration} = $$durCache{$epNum};
-  }elsif($mp3 =~ /^(.*\/)?$epNum[^\/]*\.mp3$/ and -e $mp3){
-    $mp3 =~ s/"/\\"/g;
-    my $dur = `duration -n "$mp3"`;
+  }elsif(defined $mp3File){
+    open CMD, "-|", "duration", "-n", $mp3File;
+    my $dur = <CMD>;
+    close CMD;
     chomp $dur;
     if($dur =~ /^(\d+:)+\d+$/){
       $$info{duration} = $dur;
@@ -1300,6 +1311,18 @@ sub arrEquals($$){
     return 0 if $$arr1[$i] ne $$arr2[$i];
   }
   return 1;
+}
+
+sub globOne($){
+  my ($pattern) = @_;
+  my @files = glob $pattern;
+  if(@files > 1){
+    die "error: globOne() returned multiple files: @files\n";
+  }elsif(@files == 1){
+    return $files[0];
+  }else{
+    return undef;
+  }
 }
 
 sub run(@){
