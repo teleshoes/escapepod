@@ -199,7 +199,10 @@ my $usage = "Usage:
       CACHE_DIR:    $$podcastConfigs{podcastle}{cacheDir}
 
   EPNUM: podcast episode number. if none are specified, all are used.
-         a range can be specified as [LOW-HIGH] => LOW <= EPNUM <= HIGH
+         a range can be specified as:
+         [LOW-HIGH]        LOW <= EPNUM <= HIGH
+         [-HIGH]           EPNUM <= HIGH         (same as [1-HIGH])
+         [LOW-]            EPNUM >= LOW          (same as [LOW-<max#>])
   TITLE: the title as fetched from the html and extra-info
   AUTHOR: the author as fetched from the html and extra-info
   READER: the reader as fetched from the html and extra-info
@@ -235,9 +238,19 @@ sub main(@){
     if($num =~ /^(\d+)([ab]?)$/){
       my $epNum = sprintf "%03d%s", $1+0, $2;
       push @nums, $epNum;
-    }elsif($num =~ /^\[(\d+)([ab]?)-(\d+)([ab]?)\]$/){
-      my $epNumLow = sprintf "%03d%s", $1+0, $2;
-      my $epNumHigh = sprintf "%03d%s", $3+0, $4;
+    }elsif($num =~ /^\[(\d+[ab]?)?-(\d+[ab]?)?\]$/){
+      my ($low, $high) = ($1, $2);
+      my ($epNumLow, $epNumHigh);
+      if(not defined $low or $low eq ""){
+        $epNumLow = undef;
+      }else{
+        $epNumLow = sprintf "%03d%s", $1+0, $2 if $low =~ /^(\d+)([ab]?)$/;
+      }
+      if(not defined $high or $high eq ""){
+        $epNumHigh = undef;
+      }else{
+        $epNumHigh = sprintf "%03d%s", $1+0, $2 if $high =~ /^(\d+)([ab]?)$/;
+      }
       push @ranges, [$epNumLow, $epNumHigh];
     }else{
       die $usage;
@@ -253,7 +266,9 @@ sub main(@){
     my $low = $$range[0];
     my $high = $$range[1];
     for my $epNum(@allEpNums){
-      push @nums, $epNum if $low le $epNum && $epNum le $high;
+      my $okLow = (not defined $low) || ($low le $epNum);
+      my $okHigh = (not defined $high) || ($high ge $epNum);
+      push @nums, $epNum if $okLow && $okHigh;
     }
   }
 
