@@ -344,25 +344,24 @@ sub main(@){
 
         my $forum;
         if($$info{forum} ne "?"){
-          $forum = "[$forumUrl?topic=$$info{forum} ${initials}F]";
+          $forum = "[$forumUrl?topic=$$info{forum} ${initials} Forum]";
         }else{
           $forum = "none";
         }
 
         die "Malformed episode number: $epNum\n" if $epNum !~ /^(\d+)([ab]?)$/;
-        my $num = sprintf "%d%s", $1+0, $2;
+        my $num = sprintf "%03d%s", $1+0, $2;
 
         my $note = '';
         $note = " $$info{note}" if defined $$info{note};
         my $fmt = ''
-          . "|-\n| " . ($num)
-          . " || [$articleUrl $$info{title}]$note"
-          . " || " . fmtPersonLink($$info{author}, $personLinks)
-          . " || " . fmtPersonLink($$info{reader}, $personLinks)
-          . ($$config{ignoreRating} eq "true" ? "" : " || $rating")
-          . " || $$info{duration}"
-          . " || $forum"
-          . "\n"
+          . "|-\n|EP$num\n"
+          . "|[$articleUrl $$info{title}]$note\n"
+          . "|" . fmtPersonLink($$info{author}, $personLinks) . "\n"
+          . "|" . fmtPersonLink($$info{reader}, $personLinks) . "\n"
+          . ($$config{ignoreRating} eq "true" ? "" : "|$rating\n")
+          . "|$$info{duration}\n"
+          . "|$forum\n"
           ;
         print $fmt;
         print OUT $fmt;
