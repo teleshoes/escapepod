@@ -992,11 +992,16 @@ sub getArticleUrls(){
 
     my $title = $1 if $html =~ /<title[^>]*>([^<]*)<\/title>/;
 
+    my $titleNum;
     my $regex = "(?:$$config{podcastRegex})-?(\\d+[a-b]?)";
     if(defined $title and $title =~ /$regex/i){
-      $num = $1;
+      $titleNum = $1;
     }elsif($url =~ /$regex/){
-      $num = $1;
+      $titleNum = $1;
+    }
+
+    if($url !~ /(#comments|#more-\d+)$/){
+      $num = $titleNum;
     }
 
     if(defined $$urlOverrides{$url}){
