@@ -19,7 +19,7 @@ my $podcastConfigs = {
     podcastInitials => 'EP',
     firstUrlSuffix => '2005/05/12/ep001-imperial-by-jonathon-sullivan/',
     forumBoard => '1',
-    useArchive => 'false',
+    useArchive => 'true',
     ignoreRating => 'false',
   }),
   podcastle => getConfig({
