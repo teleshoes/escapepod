@@ -434,8 +434,11 @@ sub parseHtml($$$$){
   $mp3File = $oldMP3File if defined $oldMP3File;
   $mp3File = $newMP3File if defined $newMP3File;
 
+  my $tag = "(?:<[^>]*>)";
+  my $tagWs = "(?:\\s*<[^>]*>\\s*)";
   my $b = "(?:<\\/?\\s*(?:b|strong)[^>]*>)";
-  my $span = "(?:<\\/?\\s*span[^>]*>)";
+  my $span = "(?:<\\/?\\s*span(?:\\s[^>]*)?>)";
+  my $anchor = "(?:<\\/?\\s*a(?:\\s[^>]*)?>)";
   my $ws = "[ \\t\\n]";
   my $readBy = "(?:narrated|read)$ws+(?:and produced )?by:?$ws+";
 
@@ -488,9 +491,9 @@ sub parseHtml($$$$){
   if(not $isFlash){
     if(defined $$ex{author}){
       $$info{author} = $$ex{author};
-    }elsif($htmlNoMeta =~ /(?-i)A(?i)uthor$ws*:$ws*$span?$ws*(?:<a [^>]*>)?$span?$b?([^<(]+)/i){
+    }elsif($htmlNoMeta =~ /(?-i)$span?A(?i)uthor$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
       $$info{author} = $1;
-    }elsif($htmlNoMeta =~ />by$ws*:?\s*$span?$b?(?:<a [^>]*>)?$b?([^<(]+)/i){
+    }elsif($htmlNoMeta =~ />by$ws*:?\s*$span?$b?$anchor?$b?([^<(]+)/i){
       $$info{author} = $1;
     }
   }else{
@@ -517,17 +520,24 @@ sub parseHtml($$$$){
   if(not $isFlash){
     if(defined $$ex{reader}){
       $$info{reader} = $$ex{reader};
-    }elsif($htmlNoMeta =~ /narrator$ws*:$ws*$span?$ws*(?:<a [^>]*>)?$span?$b?([^<(]+)/i){
+    }elsif($htmlNoMeta =~ /$span?narrator?$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
       $$info{reader} = $1;
-    }elsif($htmlNoMeta =~ /$readBy$span?$b?(?:<a [^>]*>)?$b?([^<(]+)/i){
+    }elsif($htmlNoMeta =~ /$readBy$span?$b?$anchor?$b?([^<(]+)/i){
       $$info{reader} = $1;
     }elsif($htmlNoMeta =~ /your\s*reader[^<]*(?:<[^>]+>\s*)+([^<]+)</i){
       $$info{reader} = $1;
+    }elsif($htmlNoMeta =~ /^$tagWs*(?:narrators|narrator|$readBy|your\s*reader)(.*)$/mi){
+      my $readerVal = $1;
+      $readerVal =~ s/$tag//g;
+      $readerVal =~ s/^\s*://;
+      $readerVal =~ s/^\s*//;
+      $readerVal =~ s/\s*$//;
+      $$info{reader} = $readerVal;
     }
   }else{
     my @readers;
     if(@readers == 0){
-      @readers = $htmlNoMeta =~ /$readBy(?:<a$ws+[^>]*>)?([^<]+)/gi;
+      @readers = $htmlNoMeta =~ /$readBy$anchor?([^<]+)/gi;
     }
     if(@readers == 0){
       @readers = $htmlNoMeta =~ /\(narrator-? ([^)]+)\)/gi;
