@@ -439,7 +439,7 @@ sub parseHtml($$$$){
   my $ws = "[ \\t\\n]";
   my $readBy = "(?:narrated|read)$ws+(?:and produced )?by:?$ws+";
 
-  my $isFlash = $html =~ /<title>.*Flash.*<\/title>/i;
+  my $isFlash = $html =~ /<title>.*Flash\W.*<\/title>/i;
 
   $html =~ s/\xa0/ /g;
   $html =~ s/\xc2/ /g;
