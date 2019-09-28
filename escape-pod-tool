@@ -1185,17 +1185,28 @@ sub crawlForum(){
     my $pageEps = [];
     my $forumAnchor = "";
     my %eps;
+    my %topics;
     while($html =~ /<a\s*href="[^"]*topic=(\d+\.\d+)">([^<]+)/gi){
       my ($topic, $contents) = ($1, $2);
-      my @eps = split /\//, $contents;
-      for my $ep(@eps){
-        #skip episodes with stars, e.g.: EP2**8
-        if($ep =~ /$$config{podcastRegex}\s*(\d+[ab]?)(?:[^*]|$)/i){
-          my $epNum = $1;
-          $eps{$epNum} = $topic;
-        }
+      $topics{$topic} = $contents;
+    }
+    for my $topic(sort keys %topics){
+      my $contents = $topics{$topic};
+      my $nameRE = $$config{podcastRegex};
+      my $numRE = '\d+[ab]?';
+      my $andRE = '(?:-|&|&amp;|/)';
+      if($contents =~ /^\s*$nameRE\s*$numRE\*/i){
+        next; #skip topics with stars after the episode number, e.g.: EP2**8
+      }elsif($contents =~ /^\s*$nameRE\s*($numRE)\s*(?:$andRE)\s*(?:$nameRE)?($numRE)/i){
+        my ($epNum1, $epNum2) = ($1, $2);
+        $eps{$epNum1} = $topic;
+        $eps{$epNum2} = $topic;
+      }elsif($contents =~ /^\s*$nameRE\s*($numRE)/i){
+        my $epNum = $1;
+        $eps{$epNum} = $topic;
       }
     }
+
     for my $ep(keys %eps){
       my $topic = $eps{$ep};
       die "malformed forum link\n" if $ep !~ /^(\d+)([ab]?)$/;
