@@ -892,6 +892,9 @@ sub cleanUrl($){
     return undef;
   }
 
+  #always use all-lowercase URLs
+  $url = lc $url;
+
   return $url;
 }
 
