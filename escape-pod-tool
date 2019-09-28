@@ -895,6 +895,12 @@ sub cleanUrl($){
   #always use all-lowercase URLs
   $url = lc $url;
 
+  #trim leading non-URL chars
+  $url =~ s/^[^a-zA-Z0-9\-_\.~\!\*'\(\);:@&=+\$,\/?%#\[\]]+//;
+
+  #trim trailing non-URL chars
+  $url =~ s/[^a-zA-Z0-9\-_\.~\!\*'\(\);:@&=+\$,\/?%#\[\]]+$//;
+
   return $url;
 }
 
