@@ -1185,13 +1185,16 @@ sub crawlForum(){
     my $pageEps = [];
     my $forumAnchor = "";
     my %eps;
-    while($html =~ /
-        <a\s*href="[^"]*topic=(\d+\.\d+)">
-        \s*$$config{podcastRegex}\s*
-        (\d+[ab]?)[^*]
-    /gxi){
-      my ($topic, $ep) = ($1, $2);
-      $eps{$ep} = $topic;
+    while($html =~ /<a\s*href="[^"]*topic=(\d+\.\d+)">([^<]+)/gi){
+      my ($topic, $contents) = ($1, $2);
+      my @eps = split /\//, $contents;
+      for my $ep(@eps){
+        #skip episodes with stars, e.g.: EP2**8
+        if($ep =~ /$$config{podcastRegex}\s*(\d+[ab]?)(?:[^*]|$)/i){
+          my $epNum = $1;
+          $eps{$epNum} = $topic;
+        }
+      }
     }
     for my $ep(keys %eps){
       my $topic = $eps{$ep};
