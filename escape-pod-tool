@@ -901,9 +901,11 @@ sub cleanUrl($){
   #trim trailing non-URL chars
   $url =~ s/[^a-zA-Z0-9\-_\.~\!\*'\(\);:@&=+\$,\/?%#\[\]]+$//;
 
-  #always end URL with a single slash
-  $url =~ s/\/+$//;
-  $url = "$url/";
+  #always end URL with a single slash, or an anchor ref
+  if($url !~ /#[^\/]*/){
+    $url =~ s/\/+$//;
+    $url = "$url/";
+  }
 
   return $url;
 }
