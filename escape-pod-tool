@@ -92,6 +92,7 @@ sub getMP3Url($);
 sub browserLoadArticle($);
 sub ensureArticleUrlCache();
 sub getMissingArticleUrls($);
+sub cleanUrl($);
 sub getAllUrls();
 sub getNextUrl($);
 sub getAllUrlsFromArchive();
@@ -885,6 +886,15 @@ sub getMissingArticleUrls($){
   return @missing;
 }
 
+sub cleanUrl($){
+  my ($url) = @_;
+  if(not defined $url){
+    return undef;
+  }
+
+  return $url;
+}
+
 sub getAllUrls(){
   if($$config{useArchive} eq 'true'){
     return getAllUrlsFromArchive();
@@ -915,7 +925,9 @@ sub getNextUrl($){
   my @anchors = $html =~ /<a [^>]+>/g;
   for my $anchor(@anchors){
     if($anchor =~ /rel="next"/ and $anchor =~ /href="([^"]+)"/){
-      return $1;
+      my $anchorUrl = $1;
+      $anchorUrl = cleanUrl($anchorUrl);
+      return $anchorUrl;
     }
   }
   return undef;
@@ -974,7 +986,9 @@ sub getUrlsFromArchiveHtml($){
   my @urls;
   for my $anchor(@anchors){
     if($anchor =~ /href="($$config{baseUrl}\/\d+\/\d+\/\d+\/[^"]+)"/){
-      push @urls, $1;
+      my $anchorUrl = $1;
+      $anchorUrl = cleanUrl($anchorUrl);
+      push @urls, $anchorUrl;
     }
   }
   return sort @urls;
