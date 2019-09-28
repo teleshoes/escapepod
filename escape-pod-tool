@@ -1225,7 +1225,7 @@ sub downloadMP3File($$$$){
   if(-e $mp3FileName or -e $newFileName){
     print "  skipping $$ep{number}..\n";
   }else{
-    run "axel", $mp3Url;
+    run "axel", "--alternate", $mp3Url;
     tagMP3File $mp3FileName, $ep if $tagFile;
   }
 }
