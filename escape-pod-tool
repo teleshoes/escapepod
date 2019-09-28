@@ -443,8 +443,6 @@ sub parseHtml($$$$){
   my $ws = "[ \\t\\n]";
   my $readBy = "(?:narrated|read)$ws+(?:and produced )?by:?$ws+";
 
-  my $isFlash = $html =~ /<title>.*Flash\W.*<\/title>/i;
-
   $html =~ s/\xa0/ /g;
   $html =~ s/\xc2/ /g;
   $html =~ s/&nbsp;/ /g;
@@ -487,6 +485,13 @@ sub parseHtml($$$$){
     $title =~ s/$$config{podcastName}.*$$config{podcastName}\s*\d+[ab]?:\s*//;
     utf8::encode $title;
     $$info{title} = $title;
+  }
+
+  my $isFlash;
+  if(defined $$info{title} and $$info{title} =~ /^Flash (Contest|Extravaganza|Fiction)/){
+    $isFlash = 1;
+  }else{
+    $isFlash = 0;
   }
 
   if(not $isFlash){
