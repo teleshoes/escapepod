@@ -1037,8 +1037,9 @@ sub getArticleUrls(){
     if(defined $num and not $skip){
       die $usage if $num !~ /^(\d+)([ab]?)$/;
       my $epNum = sprintf "%03d%s", $1+0, $2;
-      if(defined $$articleUrls{$epNum}){
-        push @errors, "duplicate url: \n$$articleUrls{$epNum}\n$url\n";
+      my $prevUrl = $$articleUrls{$epNum};
+      if(defined $prevUrl and $prevUrl ne $url){
+        push @errors, "mismatched URL for $epNum:\nold: '$prevUrl'\nnew: '$url'\n";
       }
       $$articleUrls{$epNum} = $url;
     }
