@@ -526,7 +526,7 @@ sub parseHtml($$$$){
   if(not $isFlash){
     if(defined $$ex{reader}){
       $$info{reader} = $$ex{reader};
-    }elsif($htmlNoMeta =~ /$span?narrator?$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
+    }elsif($htmlNoMeta =~ /$span?narrators?$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
       $$info{reader} = $1;
     }elsif($htmlNoMeta =~ /$readBy$span?$b?$anchor?$b?([^<(]+)/i){
       $$info{reader} = $1;
