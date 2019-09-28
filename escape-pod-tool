@@ -107,6 +107,7 @@ sub extraInfo();
 sub personLinks();
 sub fmtPersonLink($$);
 sub crawlForum();
+sub checkDownloadedFileSize($$);
 sub downloadMP3File($$$$);
 sub tagMP3File($$);
 sub newMP3FileName($);
@@ -1219,6 +1220,34 @@ sub getMP3Url($){
   return $1;
 }
 
+sub checkDownloadedFileSize($$){
+  my ($remoteUrl, $localFile) = @_;
+  if(not -f $localFile){
+    die "ERROR: download failed for $remoteUrl\n$localFile does not exist\n";
+  }
+
+  my ($expectedBytes, $actualBytes);
+
+  my $wgetSpider = `wget --spider '$remoteUrl' 2>&1`;
+  if($wgetSpider =~ /^Length:\s*(\d+)\s+/m){
+    $expectedBytes = $1;
+  }
+
+  my @stat = stat $localFile;
+  $actualBytes = $stat[7];
+
+  if(not defined $expectedBytes or $expectedBytes !~ /^\d+$/ or $expectedBytes == 0){
+    die "ERROR: could not fetch remote file size of: $remoteUrl\n";
+  }elsif(not defined $actualBytes or $actualBytes !~ /^\d+$/ or $actualBytes == 0){
+    die "ERROR: could not find local file size of: $localFile\n";
+  }elsif($actualBytes != $expectedBytes){
+    die "ERROR: mismatched local vs remote file size:\n"
+      . "$expectedBytes => $remoteUrl\n"
+      . "$actualBytes => $localFile\n"
+      ;
+  }
+}
+
 sub downloadMP3File($$$$){
   my ($mp3Url, $mp3FileName, $ep, $tagFile) = @_;
   my $newFileName = newMP3FileName $ep;
@@ -1226,6 +1255,7 @@ sub downloadMP3File($$$$){
     print "  skipping $$ep{number}..\n";
   }else{
     run "axel", "--alternate", $mp3Url;
+    checkDownloadedFileSize($mp3Url, $mp3FileName);
     tagMP3File $mp3FileName, $ep if $tagFile;
   }
 }
