@@ -618,7 +618,6 @@ sub parseHtml($$$$){
     my $prev = $$forumCache{$epNum};
     if(not defined $prev or $prev ne $$ex{forum}){
       $$forumCache{$epNum} = $$ex{forum};
-      writeAttCache 'forum-cache', $forumCache;
     }
   }
   if(not defined $$forumCache{$epNum}){
@@ -630,6 +629,7 @@ sub parseHtml($$$$){
     }else{
       print STDERR "updating forum cache\n";
       my $epArticles = crawlForum;
+      $forumCache = {};
       for my $ep(sort keys %$epArticles){
         $$forumCache{$ep} = $$epArticles{$ep};
       }
