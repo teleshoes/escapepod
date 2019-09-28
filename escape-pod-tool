@@ -513,9 +513,6 @@ sub parseHtml($$$$){
     if(@authors == 0){
       @authors = $htmlNoMeta =~ /<\/a>,$ws*by$ws+([^<(]*)</gi;
     }
-    if(@authors == 0){
-      @authors = $htmlNoMeta =~ /(?<!narrated)$ws+by$ws+([^<(]*)</gi;
-    }
     if(defined $$ex{author}){
       $$info{author} = $$ex{author};
     }else{
