@@ -349,10 +349,10 @@ sub main(@){
         my $initials = $$config{podcastInitials};
 
         my $forum;
-        if($$info{forum} ne "?"){
-          $forum = "[$forumUrl?topic=$$info{forum} ${initials} Forum]";
-        }else{
+        if($$info{forum} eq "?"){
           $forum = "none";
+        }else{
+          $forum = "[$forumUrl?topic=$$info{forum} ${initials} Forum]";
         }
 
         die "Malformed episode number: $epNum\n" if $epNum !~ /^$EPNUM_REGEX$/;
