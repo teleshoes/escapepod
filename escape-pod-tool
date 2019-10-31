@@ -351,8 +351,12 @@ sub main(@){
         my $forum;
         if($$info{forum} eq "?"){
           $forum = "none";
+        }elsif($$info{forum} =~ /^[0-9.]+$/){
+          my $topic = $$info{forum};
+          my $forumUrl = "$$config{forumUrl}?topic=$topic";
+          $forum = "[$forumUrl $initials Forum]";
         }else{
-          $forum = "[$forumUrl?topic=$$info{forum} ${initials} Forum]";
+          $forum = "[$$info{forum} $initials Forum]";
         }
 
         die "Malformed episode number: $epNum\n" if $epNum !~ /^$EPNUM_REGEX$/;
