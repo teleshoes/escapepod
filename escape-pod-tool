@@ -361,6 +361,11 @@ sub main(@){
         die "Malformed episode number: $epNum\n" if $epNum !~ /^$EPNUM_REGEX$/;
         my $num = formatEpNum $epNum;
 
+        my $dateFmt = $$info{date};
+        if($dateFmt =~ /^(\d\d\d\d)\/(\d\d)\/(\d\d)$/){
+          $dateFmt = "$1-$2-$3";
+        }
+
         my $note = '';
         $note = " $$info{note}" if defined $$info{note};
         my $fmt = ''
@@ -370,6 +375,7 @@ sub main(@){
           . "|" . fmtPersonLink($$info{reader}, $personLinks) . "\n"
           . ($$config{ignoreRating} eq "true" ? "" : "|$rating\n")
           . "|$$info{duration}\n"
+          . "|$dateFmt\n"
           . "|$forum\n"
           ;
         print $fmt;
