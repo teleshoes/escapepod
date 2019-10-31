@@ -1140,6 +1140,7 @@ sub getReorderEpNums(){
   my $file = "$$config{infoDir}/reorder";
   my $reorderEpNums = {};
   for my $line(`cat $file 2>/dev/null`){
+    next if $line =~ /^\s*$/;
     if($line =~ /^\s*(\w+)\s*(?:=>|,->)?\s*(\w+)\s*$/){
       $$reorderEpNums{$1} = $2;
     }else{
