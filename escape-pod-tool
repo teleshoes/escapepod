@@ -103,6 +103,8 @@ sub readAttCache($);
 sub readCacheFile($);
 sub writeAttCache($$);
 sub getAttCacheMtime($);
+sub getSortedEpNums(@);
+sub getReorderEpNums();
 sub extraInfo();
 sub personLinks();
 sub fmtPersonLink($$);
@@ -299,14 +301,14 @@ sub main(@){
   my $exitCode = 0;
 
   if($cmd eq '--csv'){
-    for my $epNum(sort keys %$epInfo){
+    for my $epNum(getSortedEpNums(@epNums)){
       my $articleUrl = $$articleUrls{$epNum};
       ensureHtmlCache $articleUrl;
       my $info = &{$$epInfo{$epNum}}();
       print csv($info) . "\n";
     }
   }elsif($cmd eq '--url'){
-    for my $epNum(sort keys %$epInfo){
+    for my $epNum(getSortedEpNums(@epNums)){
       print "$$articleUrls{$epNum}\n";
     }
   }elsif($cmd eq "--wiki"){
@@ -329,7 +331,7 @@ sub main(@){
       print OUT $prefix;
     }
 
-    for my $epNum(reverse sort @nums){
+    for my $epNum(reverse getSortedEpNums(@nums)){
       my $articleUrl = $$articleUrls{$epNum};
       my $personLinks = personLinks();
       if(ensureHtmlCache $articleUrl){
@@ -1102,6 +1104,31 @@ sub getAttCacheMtime($){
   }else{
     return undef;
   }
+}
+
+sub getSortedEpNums(@){
+  my @epNums = @_;
+  my $reorderEpNums = getReorderEpNums();
+  return sort {
+    my $aOrder = $$reorderEpNums{$a};
+    my $bOrder = $$reorderEpNums{$b};
+    my $aSort = defined $aOrder ? $aOrder : $a;
+    my $bSort = defined $bOrder ? $bOrder : $b;
+    return $aSort cmp $bSort;
+  } @epNums;
+}
+
+sub getReorderEpNums(){
+  my $file = "$$config{infoDir}/reorder";
+  my $reorderEpNums = {};
+  for my $line(`cat $file 2>/dev/null`){
+    if($line =~ /^\s*(\w+)\s*(?:=>|,->)?\s*(\w+)\s*$/){
+      $$reorderEpNums{$1} = $2;
+    }else{
+      die "malformed reorder line: $line";
+    }
+  }
+  return $reorderEpNums;
 }
 
 sub extraInfo(){
