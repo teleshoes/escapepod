@@ -346,7 +346,6 @@ sub main(@){
         $rating =~ s/\s*$//;
 
         my $forumUrl = $$config{forumUrl};
-        my $initials = $$config{podcastInitials};
 
         my $forum;
         if($$info{forum} eq "?"){
@@ -354,9 +353,9 @@ sub main(@){
         }elsif($$info{forum} =~ /^[0-9.]+$/){
           my $topic = $$info{forum};
           my $forumUrl = "$$config{forumUrl}?topic=$topic";
-          $forum = "[$forumUrl $initials Forum]";
+          $forum = "[$forumUrl Forum]";
         }else{
-          $forum = "[$$info{forum} $initials Forum]";
+          $forum = "[$$info{forum} Forum]";
         }
 
         die "Malformed episode number: $epNum\n" if $epNum !~ /^$EPNUM_REGEX$/;
@@ -365,7 +364,7 @@ sub main(@){
         my $note = '';
         $note = " $$info{note}" if defined $$info{note};
         my $fmt = ''
-          . "|-\n|EP$num\n"
+          . "|-\n|$num\n"
           . "|[$articleUrl $$info{title}]$note\n"
           . "|" . fmtPersonLink($$info{author}, $personLinks) . "\n"
           . "|" . fmtPersonLink($$info{reader}, $personLinks) . "\n"
