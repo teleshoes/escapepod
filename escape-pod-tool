@@ -315,7 +315,6 @@ sub main(@){
         die $usage if $num !~ /^(\d+)([ab]?)$/;
         push @nums, sprintf "%03d%s", $1+0, $2;
       }
-      @nums = sort @nums;
     }
 
     my $isAllEps = @nums == keys %$articleUrls;
@@ -330,7 +329,7 @@ sub main(@){
       print OUT $prefix;
     }
 
-    for my $epNum(reverse @nums){
+    for my $epNum(reverse sort @nums){
       my $articleUrl = $$articleUrls{$epNum};
       my $personLinks = personLinks();
       if(ensureHtmlCache $articleUrl){
