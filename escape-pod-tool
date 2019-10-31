@@ -130,7 +130,7 @@ sub runMaybeQuiet($@);
 sub tryrun(@);
 sub tryrunMaybeQuiet($@);
 
-my $EPNUM_REGEX = '(?:\d+[ab]?)';
+my $EPNUM_REGEX = '(?:B?\d+[ab]?)';
 
 my @ratings = (
   "G"     => 'OK for Kids',
@@ -419,8 +419,8 @@ sub formatEpNum($){
   if($epNum !~ /^$EPNUM_REGEX$/){
     die "malformed epNum: $epNum\n";
   }
-  if($epNum =~ /^(\d+)([ab]?)$/){
-    return sprintf "%03d%s", $1+0, $2;
+  if($epNum =~ /^(B?)(\d+)([ab]?)$/){
+    return sprintf "%s%03d%s", $1, $2+0, $3;
   }else{
     die "malformed epNum: $epNum\n";
   }
