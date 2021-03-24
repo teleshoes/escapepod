@@ -978,6 +978,7 @@ sub getNextUrl($){
 
 sub getAllUrlsFromArchive(){
   my $firstUrl = $$config{firstUrl};
+  $firstUrl =~ s/https:\/\//http:\/\//g;
   if($firstUrl !~ /^$$config{baseUrl}\/(\d\d\d\d)\/(\d\d)/){
     die "Error finding first archive month in '$firstUrl'\n";
   }
@@ -1024,6 +1025,7 @@ sub getUrlsFromArchiveHtml($){
   my @anchors = $html =~ /<a [^>]+>/g;
   my @urls;
   for my $anchor(@anchors){
+    $anchor =~ s/https:\/\//http:\/\//g;
     if($anchor =~ /href="($$config{baseUrl}\/\d+\/\d+\/\d+\/[^"]+)"/){
       my $anchorUrl = $1;
       $anchorUrl = cleanUrl($anchorUrl);
@@ -1411,6 +1413,7 @@ sub getLastCachedCalMonth(){
   my @urls = getCachedUrls();
   my $maxCalMonth = undef;
   for my $url(@urls){
+    $url =~ s/https:\/\//http:\/\//g;
     if($url =~ /^\Q$$config{baseUrl}\E\/(\d\d\d\d)\/(\d\d)\/$/){
       my $calMonth = [$1, $2];
       if(not defined $maxCalMonth or calMonthLtEq($maxCalMonth, $calMonth)){
