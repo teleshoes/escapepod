@@ -54,21 +54,21 @@ sub getConfig($){
   my $cacheDir = "$ENV{HOME}/.cache/$$base{podcastWord}";
 
   return {%$base,
-    baseUrl => "http://$$base{podcastWord}.org",
-    firstUrl => "http://$$base{podcastWord}.org/$$base{firstUrlSuffix}",
-    forumUrl => "http://forum.escapeartists.net/index.php",
-    podcastRegex => "(?:"
-      . "(?:$podcastWordsRe|$$base{podcastInitials}|episode)"
-      . "\\s*[\-,]?\\s*"
-      . "(?:episode-?\\s*)?"
-      . ")",
+    baseUrl          => "http://$$base{podcastWord}.org",
+    firstUrl         => "http://$$base{podcastWord}.org/$$base{firstUrlSuffix}",
+    forumUrl         => "http://forum.escapeartists.net/index.php",
+    podcastRegex     => "(?:"
+                        . "(?:$podcastWordsRe|$$base{podcastInitials}|episode)"
+                        . "\\s*[\-,]?\\s*"
+                        . "(?:episode-?\\s*)?"
+                        . ")",
 
-    infoDir => "$infoDir",
+    infoDir          => "$infoDir",
     urlOverridesFile => "$infoDir/url-overrides",
-    cacheDir => "$cacheDir",
+    cacheDir         => "$cacheDir",
 
-    mp3Dir => "$cacheDir/downloads",
-    csvDelim => ';',
+    mp3Dir           => "$cacheDir/downloads",
+    csvDelim         => ';',
   };
 }
 
