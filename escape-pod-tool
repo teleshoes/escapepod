@@ -528,8 +528,8 @@ sub parseHtml($$$$){
 
   if(defined $$ex{author}){
     $$info{author} = $$ex{author};
-  }elsif($isFlash){
-    $$info{author} = join ', ', @flashAuthors if @flashAuthors > 0;
+  }elsif($isFlash and @flashAuthors > 0){
+    $$info{author} = join ', ', @flashAuthors;
   }elsif($htmlNoMeta =~ /(?-i)$span?A(?i)uthor$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
     $$info{author} = $1;
   }elsif($htmlNoMeta =~ />by$ws*:?\s*$span?$b?$anchor?$b?([^<(]+)/i){
@@ -544,8 +544,8 @@ sub parseHtml($$$$){
 
   if(defined $$ex{reader}){
     $$info{reader} = $$ex{reader};
-  }elsif($isFlash){
-    $$info{reader} = join ', ', @flashReaders if @flashReaders > 0;
+  }elsif($isFlash and @flashReaders > 0){
+    $$info{reader} = join ', ', @flashReaders;
   }elsif($htmlNoMeta =~ /$span?narrators?$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
     $$info{reader} = $1;
   }elsif($htmlNoMeta =~ /$readBy$span?$b?$anchor?$b?([^<(]+)/i){
