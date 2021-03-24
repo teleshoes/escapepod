@@ -274,6 +274,7 @@ sub main(@){
     my $low = $$range[0];
     my $high = $$range[1];
     for my $epNum(@allEpNums){
+      next if $epNum !~ /^\d+$/;
       my $okLow = (not defined $low) || ($low le $epNum);
       my $okHigh = (not defined $high) || ($high ge $epNum);
       push @nums, $epNum if $okLow && $okHigh;
