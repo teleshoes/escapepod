@@ -519,67 +519,46 @@ sub parseHtml($$$$){
     $isFlash = 0;
   }
 
-  if(not $isFlash){
-    if(defined $$ex{author}){
-      $$info{author} = $$ex{author};
-    }elsif($htmlNoMeta =~ /(?-i)$span?A(?i)uthor$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
-      $$info{author} = $1;
-    }elsif($htmlNoMeta =~ />by$ws*:?\s*$span?$b?$anchor?$b?([^<(]+)/i){
-      $$info{author} = $1;
-    }
-  }else{
-    my @authors;
-    if(@authors == 0){
-      @authors = $htmlNoMeta =~ /$b$ws*by$ws+([^<(]*)$b/gi;
-    }
-    if(@authors == 0){
-      @authors = $htmlNoMeta =~ /$b$ws*by$ws+([^<(]*)</gi;
-    }
-    if(@authors == 0){
-      @authors = $htmlNoMeta =~ /<\/a>,$ws*by$ws+([^<(]*)</gi;
-    }
-    if(defined $$ex{author}){
-      $$info{author} = $$ex{author};
-    }else{
-      $$info{author} = join ', ', @authors if @authors > 0;
-    }
+
+
+  my @flashAuthors;
+  @flashAuthors = $htmlNoMeta =~ /$b$ws*by$ws+([^<(]*)$b/gi    if $isFlash and @flashAuthors == 0;
+  @flashAuthors = $htmlNoMeta =~ /$b$ws*by$ws+([^<(]*)</gi     if $isFlash and @flashAuthors == 0;
+  @flashAuthors = $htmlNoMeta =~ /<\/a>,$ws*by$ws+([^<(]*)</gi if $isFlash and @flashAuthors == 0;
+
+  if(defined $$ex{author}){
+    $$info{author} = $$ex{author};
+  }elsif($isFlash){
+    $$info{author} = join ', ', @flashAuthors if @flashAuthors > 0;
+  }elsif($htmlNoMeta =~ /(?-i)$span?A(?i)uthor$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
+    $$info{author} = $1;
+  }elsif($htmlNoMeta =~ />by$ws*:?\s*$span?$b?$anchor?$b?([^<(]+)/i){
+    $$info{author} = $1;
   }
 
-  if(not $isFlash){
-    if(defined $$ex{reader}){
-      $$info{reader} = $$ex{reader};
-    }elsif($htmlNoMeta =~ /$span?narrators?$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
-      $$info{reader} = $1;
-    }elsif($htmlNoMeta =~ /$readBy$span?$b?$anchor?$b?([^<(]+)/i){
-      $$info{reader} = $1;
-    }elsif($htmlNoMeta =~ /your\s*reader[^<]*(?:<[^>]+>\s*)+([^<]+)</i){
-      $$info{reader} = $1;
-    }elsif($htmlNoMeta =~ /^$tagWs*(?:narrators|narrator|$readBy|your\s*reader)(.*)$/mi){
-      my $readerVal = $1;
-      $readerVal =~ s/$tag//g;
-      $readerVal =~ s/^\s*://;
-      $readerVal =~ s/^\s*//;
-      $readerVal =~ s/\s*$//;
-      $$info{reader} = $readerVal;
-    }
-  }else{
-    my @readers;
-    if(@readers == 0){
-      @readers = $htmlNoMeta =~ /$readBy$anchor?([^<]+)/gi;
-    }
-    if(@readers == 0){
-      @readers = $htmlNoMeta =~ /\(narrator-? ([^)]+)\)/gi;
-    }
-    if(@readers == 0){
-      if($htmlNoMeta =~ /your\s*reader[^<]*(?:<[^>]+>\s*)+([^<]+)</i){
-        $$info{reader} = $1;
-      }
-    }
-    if(defined $$ex{reader}){
-      $$info{reader} = $$ex{reader};
-    }else{
-      $$info{reader} = join ', ', @readers if @readers > 0;
-    }
+
+
+  my @flashReaders;
+  @flashReaders = $htmlNoMeta =~ /$readBy$anchor?([^<]+)/gi if $isFlash and @flashReaders == 0;
+  @flashReaders = $htmlNoMeta =~ /\(narrator-? ([^)]+)\)/gi if $isFlash and @flashReaders == 0;
+
+  if(defined $$ex{reader}){
+    $$info{reader} = $$ex{reader};
+  }elsif($isFlash){
+    $$info{reader} = join ', ', @flashReaders if @flashReaders > 0;
+  }elsif($htmlNoMeta =~ /$span?narrators?$span?$ws*:$ws*$span?$ws*$anchor?$span?$b?([^<(]+)/i){
+    $$info{reader} = $1;
+  }elsif($htmlNoMeta =~ /$readBy$span?$b?$anchor?$b?([^<(]+)/i){
+    $$info{reader} = $1;
+  }elsif($htmlNoMeta =~ /your\s*reader[^<]*(?:<[^>]+>\s*)+([^<]+)</i){
+    $$info{reader} = $1;
+  }elsif($htmlNoMeta =~ /^$tagWs*(?:narrators|narrator|$readBy|your\s*reader)(.*)$/mi){
+    my $readerVal = $1;
+    $readerVal =~ s/$tag//g;
+    $readerVal =~ s/^\s*://;
+    $readerVal =~ s/^\s*//;
+    $readerVal =~ s/\s*$//;
+    $$info{reader} = $readerVal;
   }
 
   if(defined $$info{reader} and $$info{reader} =~ /^\s*the\s*author\s*$/i){
