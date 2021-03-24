@@ -470,8 +470,10 @@ sub parseHtml($$$$){
 
   $html =~ s/\xa0/ /g;
   $html =~ s/\xc2/ /g;
+  $html =~ s/&#x2d;/-/g;
   $html =~ s/&nbsp;/ /g;
   $html =~ s/&#160;/ /g;
+  $html =~ s/&#8217;/'/g;
   $html =~ s/Â/ /g;
 
   my $htmlNoMeta = $html;
