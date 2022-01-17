@@ -655,6 +655,9 @@ sub parseHtml($$$$){
   }
   if(defined $$forumCache{$epNum}){
     $$info{forum} = $$forumCache{$epNum};
+  }else{
+    #auto-allow missing forums, now that escapepod doesnt create official ones
+    $$info{forum} = "?";
   }
 
   for my $att(@atts){
